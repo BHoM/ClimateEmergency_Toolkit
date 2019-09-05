@@ -1,0 +1,85 @@
+{ "Name" : "In-Situ Concrete General ", "EmbodiedCarbon" : "0.103", "BHoM_Guid" : "c8187bb0-1cc9-4c20-a1db-865e645a7740" }
+{ "Name" : "In-Situ Concrete GEN 0 (6/8 MPa) ", "EmbodiedCarbon" : "0.065", "BHoM_Guid" : "154b444a-0f58-40ba-927b-22f5ca6c6eb0" }
+{ "Name" : "In-Situ Concrete GEN 1 (8/10 MPa) ", "EmbodiedCarbon" : "0.090", "BHoM_Guid" : "0096c72e-17a4-4245-a259-c74ec04c5fd0" }
+{ "Name" : "In-Situ Concrete GEN 2 (12/15 MPa) ", "EmbodiedCarbon" : "0.097", "BHoM_Guid" : "e1606acc-2cb5-4078-b42f-7201354218a7" }
+{ "Name" : "In-Situ Concrete GEN 3 (16/20 MPa) ", "EmbodiedCarbon" : "0.104", "BHoM_Guid" : "9106e484-2a34-40e4-94f1-e58512a3c779" }
+{ "Name" : "In-Situ Concrete 20/25 MPa ", "EmbodiedCarbon" : "0.112", "BHoM_Guid" : "836391c0-de88-4c7d-a9d7-0a7874ba187f" }
+{ "Name" : "In-Situ Concrete 25/30 MPa ", "EmbodiedCarbon" : "0.119", "BHoM_Guid" : "2238e234-8a09-486c-9206-e0492ac37930" }
+{ "Name" : "In-Situ Concrete 28/35 MPa ", "EmbodiedCarbon" : "0.126", "BHoM_Guid" : "634026cd-b3c9-488f-86d0-786185028e9a" }
+{ "Name" : "In-Situ Concrete 32/40 MPa ", "EmbodiedCarbon" : "0.138", "BHoM_Guid" : "8318dca7-4077-4936-856a-5a9d0c24e6a9" }
+{ "Name" : "In-Situ Concrete 35/45 MPa ", "EmbodiedCarbon" : "0.149", "BHoM_Guid" : "acad5bf1-9b58-4b9c-9418-ff0f6d9354c0" }
+{ "Name" : "In-Situ Concrete 40/50 Mpa ", "EmbodiedCarbon" : "0.159", "BHoM_Guid" : "5e8a0005-0f87-4429-9e31-139bd0e14762" }
+{ "Name" : "In-Situ Concrete PAV1 ", "EmbodiedCarbon" : "0.126", "BHoM_Guid" : "67ff28ea-cb62-4157-aadb-22e26eb71a6e" }
+{ "Name" : "In-Situ Concrete PAV2 ", "EmbodiedCarbon" : "0.138", "BHoM_Guid" : "f246c325-e642-4ff7-9f1a-a3512c9a488b" }
+{ "Name" : "With CEM I GEN 0 (6/8 MPa) ", "EmbodiedCarbon" : "0.070", "BHoM_Guid" : "cb463f9d-71d0-4d60-946f-7f6dd9177178" }
+{ "Name" : "With CEM I GEN 1 (8/10 MPa) ", "EmbodiedCarbon" : "0.097", "BHoM_Guid" : "29692c19-16b7-4910-bd72-c7e1c8ff6682" }
+{ "Name" : "With CEM I GEN 2 (12/15 MPa) ", "EmbodiedCarbon" : "0.105", "BHoM_Guid" : "f6ef189f-d64d-4208-a51b-72cd021f78e4" }
+{ "Name" : "With CEM I GEN 3 (16/20 MPa) ", "EmbodiedCarbon" : "0.113", "BHoM_Guid" : "e4fbe756-06c9-4758-a790-dd90e7f0a6fa" }
+{ "Name" : "With CEM I RC 20/25 (20/25 MPa) ", "EmbodiedCarbon" : "0.121", "BHoM_Guid" : "1a9c4bfe-e373-4ef0-ad34-2891ef91ca13" }
+{ "Name" : "With CEM I RC 25/30 (25/30 MPa) ", "EmbodiedCarbon" : "0.129", "BHoM_Guid" : "cd219ae2-6435-4f18-8349-c874a3782efc" }
+{ "Name" : "With CEM I RC 28/35 (28/35 MPa) ", "EmbodiedCarbon" : "0.136", "BHoM_Guid" : "6437a31f-e30c-4e9e-ba63-ef25e4acb150" }
+{ "Name" : "With CEM I RC 32/40 (32/40 MPa) ", "EmbodiedCarbon" : "0.149", "BHoM_Guid" : "fb89795f-50dc-43fe-a30e-819887316ee7" }
+{ "Name" : "With CEM I RC 35/45 (32/40 MPa) ", "EmbodiedCarbon" : "0.161", "BHoM_Guid" : "240fdc79-d5a0-410e-8cb3-694fd1737a70" }
+{ "Name" : "With CEM I RC 40/50 (40/50 MPa) ", "EmbodiedCarbon" : "0.172", "BHoM_Guid" : "41544966-7da5-4424-a47e-2528b89ebe2a" }
+{ "Name" : "With CEM I PAV1 ", "EmbodiedCarbon" : "0.136", "BHoM_Guid" : "0df05a55-062d-4e43-bc4a-3df098f8b8b3" }
+{ "Name" : "With CEM I PAV2 ", "EmbodiedCarbon" : "0.149", "BHoM_Guid" : "f903069a-d226-415e-abcd-3bf29785daf9" }
+{ "Name" : "Portland Limestone Concrete - 14% Limestone GEN 0 (6/8 MPa) ", "EmbodiedCarbon" : "0.061", "BHoM_Guid" : "ec56d52d-d04b-4209-917d-0f949dd4fea0" }
+{ "Name" : "Portland Limestone Concrete - 14% Limestone GEN 1 (8/10 MPa) ", "EmbodiedCarbon" : "0.154", "BHoM_Guid" : "f44db370-e222-4af8-816b-b6d21d9a01c7" }
+{ "Name" : "Portland Limestone Concrete - 14% Limestone GEN 2 (12/15 MPa) ", "EmbodiedCarbon" : "0.090", "BHoM_Guid" : "801957c5-9d1f-42cd-adab-07b659a695cb" }
+{ "Name" : "Portland Limestone Concrete - 14% Limestone GEN 3 (16/20 MPa) ", "EmbodiedCarbon" : "0.097", "BHoM_Guid" : "b184e5da-073f-4ab0-b949-e5669d4b52c8" }
+{ "Name" : "Portland Limestone Concrete - 14% Limestone RC 20/25 (20/25 MPa) ", "EmbodiedCarbon" : "0.104", "BHoM_Guid" : "f4dd3f5d-069d-4b8e-8e95-79b95cfa43fd" }
+{ "Name" : "Portland Limestone Concrete - 14% Limestone RC 25/30 (25/30 MPa) ", "EmbodiedCarbon" : "0.111", "BHoM_Guid" : "0a3cb88e-895b-4364-8889-db263abeb06e" }
+{ "Name" : "Portland Limestone Concrete - 14% Limestone RC 28/35 (28/35 MPa) ", "EmbodiedCarbon" : "0.117", "BHoM_Guid" : "bd12d0b2-a3da-40ba-a30f-0947ad9a80f7" }
+{ "Name" : "Portland Limestone Concrete - 14% Limestone RC 32/40 (32/40 MPa) ", "EmbodiedCarbon" : "0.129", "BHoM_Guid" : "42392296-0826-4cbe-b17d-6a32d6b77a35" }
+{ "Name" : "Portland Limestone Concrete - 14% Limestone RC 35/45 (32/40 MPa) ", "EmbodiedCarbon" : "0.140", "BHoM_Guid" : "683f007a-e8ec-45f8-9c1f-a8a5158e703b" }
+{ "Name" : "Portland Limestone Concrete - 14% Limestone RC 40/50 (40/50 MPa) ", "EmbodiedCarbon" : "0.153", "BHoM_Guid" : "6f405903-a333-46f5-aa0d-6253dc9b465b" }
+{ "Name" : "Portland Limestone Concrete - 14% Limestone PAV1 ", "EmbodiedCarbon" : "0.117", "BHoM_Guid" : "47e2b457-1ab3-4eca-a0fb-8dcf44238bd7" }
+{ "Name" : "Portland Limestone Concrete - 14% Limestone PAV2 ", "EmbodiedCarbon" : "0.129", "BHoM_Guid" : "3a9872bf-849c-4945-9769-98e0b07e8609" }
+{ "Name" : "35% natural pozzolanic ash GEN 0 (6/8 MPa) ", "EmbodiedCarbon" : "0.056", "BHoM_Guid" : "04e20da5-eae8-48b7-8715-a93da267a995" }
+{ "Name" : "35% natural pozzolanic ash GEN 1 (8/10 MPa) ", "EmbodiedCarbon" : "0.076", "BHoM_Guid" : "cd2ab3f5-830e-4e62-9846-3ccfd01af042" }
+{ "Name" : "35% natural pozzolanic ash GEN 2 (12/15 MPa) ", "EmbodiedCarbon" : "0.081", "BHoM_Guid" : "6c3dd690-4cd0-4996-aece-fd5bfc4f7316" }
+{ "Name" : "35% natural pozzolanic ash GEN 3 (16/20 MPa) ", "EmbodiedCarbon" : "0.087", "BHoM_Guid" : "557f6319-9ad8-463e-8b94-118889da9c35" }
+{ "Name" : "35% natural pozzolanic ash RC 20/25 (20/25 MPa) ", "EmbodiedCarbon" : "0.094", "BHoM_Guid" : "bbbc10c8-5857-429a-8b0d-cdfbce8bd321" }
+{ "Name" : "35% natural pozzolanic ash RC 25/30 (25/30 MPa) ", "EmbodiedCarbon" : "0.100", "BHoM_Guid" : "4c9c7488-7323-4315-9141-b574a3ee2656" }
+{ "Name" : "35% natural pozzolanic ash RC 28/35 (28/35 MPa) ", "EmbodiedCarbon" : "0.106", "BHoM_Guid" : "7e2bb138-1952-4766-a9ce-fe7768e2afa1" }
+{ "Name" : "35% natural pozzolanic ash RC 32/40 (32/40 MPa) ", "EmbodiedCarbon" : "0.117", "BHoM_Guid" : "aec3a6b6-03ac-43dc-84af-c00398dc25a2" }
+{ "Name" : "35% natural pozzolanic ash RC 35/45 (32/40 MPa) ", "EmbodiedCarbon" : "0.124", "BHoM_Guid" : "e465498d-9630-49f6-8c67-5a92f5bd4af0" }
+{ "Name" : "35% natural pozzolanic ash RC 40/50 (40/50 MPa) ", "EmbodiedCarbon" : "0.133", "BHoM_Guid" : "2f1c4f1b-2597-4217-abe6-7cd795a44d44" }
+{ "Name" : "35% natural pozzolanic ash PAV1 ", "EmbodiedCarbon" : "0.106", "BHoM_Guid" : "7df09d6d-2481-4a1f-984e-0ac7365ad152" }
+{ "Name" : "35% natural pozzolanic ash PAV2 ", "EmbodiedCarbon" : "0.117", "BHoM_Guid" : "ef31b120-31b4-4901-bd90-93627f5b7169" }
+{ "Name" : "15% Cement Replacement - Fly Ash  ", "EmbodiedCarbon" : "0.064", "BHoM_Guid" : "69aaef6f-b4bc-44a5-aa69-2f4bcf3fc01d" }
+{ "Name" : "15% Cement Replacement - Fly Ash  ", "EmbodiedCarbon" : "0.128", "BHoM_Guid" : "680a41eb-c620-449d-b324-d2eab230537c" }
+{ "Name" : "15% Cement Replacement - Fly Ash  ", "EmbodiedCarbon" : "0.096", "BHoM_Guid" : "7ee1f261-f55b-442b-8e4c-0552c6f42af2" }
+{ "Name" : "15% Cement Replacement - Fly Ash  ", "EmbodiedCarbon" : "0.103", "BHoM_Guid" : "2ff8193c-5288-4e27-9c3a-7af9644ac052" }
+{ "Name" : "15% Cement Replacement - Fly Ash  ", "EmbodiedCarbon" : "0.111", "BHoM_Guid" : "03e52190-cf11-4c37-a054-9f80dd4e7353" }
+{ "Name" : "15% Cement Replacement - Fly Ash  ", "EmbodiedCarbon" : "0.118", "BHoM_Guid" : "024ef498-162f-499f-b540-7c31f14e6a2e" }
+{ "Name" : "15% Cement Replacement - Fly Ash  ", "EmbodiedCarbon" : "0.126", "BHoM_Guid" : "59b4e6d6-509a-430d-a6e1-c859c7790292" }
+{ "Name" : "15% Cement Replacement - Fly Ash  ", "EmbodiedCarbon" : "0.139", "BHoM_Guid" : "40c13d57-e416-4fcd-bb13-f87d009527d8" }
+{ "Name" : "15% Cement Replacement - Fly Ash  ", "EmbodiedCarbon" : "0.149", "BHoM_Guid" : "4115e913-efdf-4f6e-a20d-a78d63a50ff6" }
+{ "Name" : "15% Cement Replacement - Fly Ash  ", "EmbodiedCarbon" : "0.159", "BHoM_Guid" : "59cf9c0c-fe5e-4b2d-8e33-04a1a68d8502" }
+{ "Name" : "15% Cement Replacement - Fly Ash  ", "EmbodiedCarbon" : "0.126", "BHoM_Guid" : "c7622f9f-c193-4952-bd5f-11bb0b423725" }
+{ "Name" : "15% Cement Replacement - Fly Ash  ", "EmbodiedCarbon" : "0.139", "BHoM_Guid" : "c40c0978-93fd-48e5-ab1a-109296ee025a" }
+{ "Name" : "30% Cement Replacement - Fly Ash  ", "EmbodiedCarbon" : "0.057", "BHoM_Guid" : "2819c95e-0261-490d-a963-c9c2d65a0dcc" }
+{ "Name" : "30% Cement Replacement - Fly Ash  ", "EmbodiedCarbon" : "0.144", "BHoM_Guid" : "db8a92bf-8e32-44ee-bc87-504a46ce72c6" }
+{ "Name" : "30% Cement Replacement - Fly Ash  ", "EmbodiedCarbon" : "0.085", "BHoM_Guid" : "86235fbb-87da-4c66-a67a-644c1187d77b" }
+{ "Name" : "30% Cement Replacement - Fly Ash  ", "EmbodiedCarbon" : "0.092", "BHoM_Guid" : "d5d5287f-c039-4e14-b4d1-f298c62afe11" }
+{ "Name" : "30% Cement Replacement - Fly Ash  ", "EmbodiedCarbon" : "0.099", "BHoM_Guid" : "39f04c04-1b09-4876-b984-845da70d06d3" }
+{ "Name" : "30% Cement Replacement - Fly Ash  ", "EmbodiedCarbon" : "0.105", "BHoM_Guid" : "508cde90-6967-49b4-9861-c16cd5226479" }
+{ "Name" : "30% Cement Replacement - Fly Ash  ", "EmbodiedCarbon" : "0.113", "BHoM_Guid" : "d594bd9f-5e89-43ed-ac58-1ce50cfd218e" }
+{ "Name" : "30% Cement Replacement - Fly Ash  ", "EmbodiedCarbon" : "0.125", "BHoM_Guid" : "b4f8f74b-f446-4cce-9333-26d725037088" }
+{ "Name" : "30% Cement Replacement - Fly Ash  ", "EmbodiedCarbon" : "0.133", "BHoM_Guid" : "1cb103b1-6c8e-4b19-9ae9-d67d455bd052" }
+{ "Name" : "30% Cement Replacement - Fly Ash  ", "EmbodiedCarbon" : "0.142", "BHoM_Guid" : "0fbed475-fba6-485a-b4ef-aa68ad460bfb" }
+{ "Name" : "30% Cement Replacement - Fly Ash  ", "EmbodiedCarbon" : "0.113", "BHoM_Guid" : "bc8acfac-f7c0-455d-b89f-79e3490fa05f" }
+{ "Name" : "30% Cement Replacement - Fly Ash  ", "EmbodiedCarbon" : "0.125", "BHoM_Guid" : "bad391f5-3c0a-486d-b7a3-02fade794818" }
+{ "Name" : "40% Cement Replacement - Fly Ash  ", "EmbodiedCarbon" : "0.052", "BHoM_Guid" : "be2207e2-9d3c-46e2-a34b-e013ebd2489f" }
+{ "Name" : "40% Cement Replacement - Fly Ash  ", "EmbodiedCarbon" : "0.071", "BHoM_Guid" : "88300af0-03dd-42b9-b8d2-40985b8ec714" }
+{ "Name" : "40% Cement Replacement - Fly Ash  ", "EmbodiedCarbon" : "0.076", "BHoM_Guid" : "21d87ffe-deb0-4a1e-8d27-49671fd8a227" }
+{ "Name" : "40% Cement Replacement - Fly Ash  ", "EmbodiedCarbon" : "0.081", "BHoM_Guid" : "7357a281-690b-4a5d-92ef-8cad2092caf4" }
+{ "Name" : "40% Cement Replacement - Fly Ash  ", "EmbodiedCarbon" : "0.088", "BHoM_Guid" : "a0f5a064-5348-4c94-a461-28753edc29a3" }
+{ "Name" : "40% Cement Replacement - Fly Ash  ", "EmbodiedCarbon" : "0.093", "BHoM_Guid" : "f4191e11-328a-48ec-8c58-ae6fc30d214d" }
+{ "Name" : "40% Cement Replacement - Fly Ash  ", "EmbodiedCarbon" : "0.099", "BHoM_Guid" : "f51ea9f2-52dc-45a3-97a2-ff6bcc8bf2d1" }
+{ "Name" : "40% Cement Replacement - Fly Ash  ", "EmbodiedCarbon" : "0.109", "BHoM_Guid" : "3d0ae72f-9961-4a47-8118-57a7d16eb1d4" }
+{ "Name" : "40% Cement Replacement - Fly Ash  ", "EmbodiedCarbon" : "0.115", "BHoM_Guid" : "9dcd1ac8-f6f9-4384-bfe5-fe5969a270b7" }
+{ "Name" : "40% Cement Replacement - Fly Ash  ", "EmbodiedCarbon" : "0.123", "BHoM_Guid" : "45e1432c-1d7d-4a92-89ac-f1179f863cca" }
+{ "Name" : "40% Cement Replacement - Fly Ash  ", "EmbodiedCarbon" : "0.098", "BHoM_Guid" : "50fea5df-70e7-41bb-be4f-a5c0a733fc08" }
+{ "Name" : "40% Cement Replacement - Fly Ash  ", "EmbodiedCarbon" : "0.109", "BHoM_Guid" : "7470cdef-6180-49c6-a10b-c7ef718ed3fc" }

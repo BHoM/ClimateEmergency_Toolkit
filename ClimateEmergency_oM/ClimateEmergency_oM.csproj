@@ -43,5 +43,12 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="DataSets\LifeCycleAnalysis\EmbodiedCarbon\EmbodiedCarbonICEV5Concrete.json" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>C:\Windows\System32\xcopy "$(ProjectDir)DataSets\*.*" "C:\Users\$(Username)\AppData\Roaming\BHoM\DataSets" /Y /I /E</PostBuildEvent>
+  </PropertyGroup>
 </Project>
