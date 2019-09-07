@@ -23,7 +23,9 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.ComponentModel;
 using BH.oM.Base;
+using BH.oM.Reflection.Attributes;
 using BH.oM.Structure.MaterialFragments;
 
 namespace BH.Engine.ClimateEmergency
@@ -34,6 +36,10 @@ namespace BH.Engine.ClimateEmergency
         /****   Public Methods                          ****/
         /***************************************************/
 
+        [Description("Calculates the embodied carbon of a BHoM Object based on explicitly defined volume, material and embodied carbon dataset.")]
+        [Input("obj", "The BHoM Object to calculate the embodied energy of. This method requires the object's volume to be stored in CustomData under a 'Volume' key.")]
+        [Input("material", "This is currently hardcoded as a BH.oM.Structure.MaterialFragments type - compatible with the current BHoM Materials Dataset.")]
+        [Input("embodiedCarbonData", "Currently a custom object with a valid value for embodied carbon stored in CustomData under an 'EmbodiedCarbon' key.")]
         public static double EmbodiedCarbon(BHoMObject obj, IMaterialFragment material, CustomObject embodiedCarbonData)
         {
             double volume, density, embodiedCarbon;
@@ -43,7 +49,8 @@ namespace BH.Engine.ClimateEmergency
                 volume = (double)obj.CustomData["Volume"];
             }
             else
-            { 
+            {
+                BH.Engine.Reflection.Compute.RecordError("The BHoMObject must have a valid volume stored in CustomData under a 'Volume' key.");
                 return 0;
             }
 
@@ -57,6 +64,7 @@ namespace BH.Engine.ClimateEmergency
             }
             else
             {
+                BH.Engine.Reflection.Compute.RecordError("The embodiedCarbonDataset must have a valid value for embodied carbon stored in CustomData under an 'EmbodiedCarbon' key.");
                 return 0;
             }
 
