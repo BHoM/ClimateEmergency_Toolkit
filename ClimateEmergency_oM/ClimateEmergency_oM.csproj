@@ -43,9 +43,8 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
-    <None Include="DataSets\LifeCycleAnalysis\EmbodiedCarbon\EmbodiedCarbonICEV5Concrete.json" />
+    <Folder Include="DataSets\LifeCycleAnalysis\EmbodiedCarbon\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
