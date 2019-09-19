@@ -36,12 +36,12 @@ namespace BH.Engine.ClimateEmergency
         /****   Public Methods                          ****/
         /***************************************************/
 
-        [Description("Calculates the global warming potential of a BHoM Object based on explicitly defined volume and Environmental Product Declaration dataset.")]
-        [Input("obj", "The BHoM Object to calculate the embodied kg CO2 - Global Warming Potential. This method requires the object's volume to be stored in CustomData under a 'Volume' key.")]
-        [Input("EPDData", "Currently a custom object with a valid value for global warming potential stored in CustomData under an 'GlobalWarmingPotential' key.")]
-        public static double GlobalWarmingPotential(BHoMObject obj, CustomObject EPDData)
+        [Description("Calculates the photochemical ozone creation potential of a BHoM Object based on explicitly defined volume and Environmental Product Declaration dataset.")]
+        [Input("obj", "The BHoM Object to calculate the Photochemical Ozone Creation Potential (kg O3). This method requires the object's volume to be stored in CustomData under a 'Volume' key.")]
+        [Input("EPDData", "Currently a custom object with a valid value for photochemical ozone creation potential stored in CustomData under an 'PhotochemicalOzoneCreationPotential' key.")]
+        public static double PhotochemicalOzoneCreationPotential(BHoMObject obj, CustomObject EPDData)
         {
-            double volume, density, globalWarmingPotential;
+            double volume, density, photochemicalOzoneCreationPotential;
 
             if (obj.CustomData.ContainsKey("Volume"))
             {
@@ -63,17 +63,17 @@ namespace BH.Engine.ClimateEmergency
                 return 0;
             }
 
-            if (EPDData.CustomData.ContainsKey("GlobalWarmingPotential"))
+            if (EPDData.CustomData.ContainsKey("PhotochemicalOzoneCreationPotential"))
             {
-                globalWarmingPotential = (double)EPDData.CustomData["GlobalWarmingPotential"];
+                photochemicalOzoneCreationPotential = (double)EPDData.CustomData["GlobalWarmingPotential"];
             }
             else
             {
-                BH.Engine.Reflection.Compute.RecordError("The EPDDataset must have a valid value for global warming potential stored in CustomData under an 'GlobalWarmingPotential' key.");
+                BH.Engine.Reflection.Compute.RecordError("The EPDDataset must have a valid value for photochemical ozone creation potential stored in CustomData under an 'PhotochemicalOzoneCreationPotential' key.");
                 return 0;
             }
 
-            return volume * density * globalWarmingPotential;
+            return volume * density * photochemicalOzoneCreationPotential;
         }
 
         /***************************************************/

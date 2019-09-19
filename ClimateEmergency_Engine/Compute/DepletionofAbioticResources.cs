@@ -74,9 +74,10 @@ namespace BH.Engine.ClimateEmergency
             }
 
             return volume * density * depletionofAbioticResources;
-        
 
-        /***************************************************/
 
+            /***************************************************/
+
+        }
     }
 }
