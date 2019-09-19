@@ -39,7 +39,7 @@ namespace BH.Engine.ClimateEmergency
         [Description("Calculates the depletion of abiotic resources (fossil fuels) of a BHoM Object based on explicitly defined volume and Environmental Product Declaration dataset.")]
         [Input("obj", "The BHoM Object to calculate the depletion of abiotic resources (fossil fuels) (kg methyl jasmonate). This method requires the object's volume to be stored in CustomData under a 'Volume' key.")]
         [Input("EPDData", "Currently a custom object with a valid value for depletion of abiotic (fossil fuels) stored in CustomData under an 'DepletionofAbioticResourcesFossilFuels' key.")]
-        public static double DepletionofAbioticResources(BHoMObject obj, CustomObject EPDData) 
+        public static double DepletionofAbioticResourcesFossilFuels(BHoMObject obj, CustomObject EPDData)
         {
             double volume, density, depletionofAbioticResourcesFossilFuels;
 
@@ -74,9 +74,10 @@ namespace BH.Engine.ClimateEmergency
             }
 
             return volume * density * depletionofAbioticResourcesFossilFuels;
-        
 
-        /***************************************************/
 
+            /***************************************************/
+
+        }
     }
 }

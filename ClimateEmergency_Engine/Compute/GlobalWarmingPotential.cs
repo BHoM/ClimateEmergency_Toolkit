@@ -38,7 +38,7 @@ namespace BH.Engine.ClimateEmergency
 
         [Description("Calculates the global warming potential of a BHoM Object based on explicitly defined volume and Environmental Product Declaration dataset.")]
         [Input("obj", "The BHoM Object to calculate the embodied kg CO2 - Global Warming Potential. This method requires the object's volume to be stored in CustomData under a 'Volume' key.")]
-        [Input("EPDData", "Currently a custom object with a valid value for global warming potential stored in CustomData under an 'GlobalWarmingPotential' key.")]
+        [Input("EPDData", "Currently a custom object with a valid value for global warming potential stored in CustomData under a 'GlobalWarmingPotential' key.")]
         public static double GlobalWarmingPotential(BHoMObject obj, CustomObject EPDData)
         {
             double volume, density, globalWarmingPotential;
@@ -69,7 +69,7 @@ namespace BH.Engine.ClimateEmergency
             }
             else
             {
-                BH.Engine.Reflection.Compute.RecordError("The EPDDataset must have a valid value for global warming potential stored in CustomData under an 'GlobalWarmingPotential' key.");
+                BH.Engine.Reflection.Compute.RecordError("The EPDDataset must have a valid value for global warming potential stored in CustomData under a 'GlobalWarmingPotential' key.");
                 return 0;
             }
 
