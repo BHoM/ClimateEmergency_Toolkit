@@ -1,0 +1,2 @@
+{ "Name" : "Pipes - PVC", "Density" : 1420.0, "GlobalWarmingPotential" : 2.8300000000000001, "BHoM_Guid" : "3494bf18-e976-4c36-a89c-b5ea59cda355" }
+{ "Name" : "Pipes - PEX", "Density" : 926.0, "GlobalWarmingPotential" : 4.1100000000000003, "BHoM_Guid" : "3a71004e-efd2-485b-a969-9cacc3a5e7d8" }
