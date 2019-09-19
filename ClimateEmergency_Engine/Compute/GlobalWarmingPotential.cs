@@ -36,13 +36,12 @@ namespace BH.Engine.ClimateEmergency
         /****   Public Methods                          ****/
         /***************************************************/
 
-        [Description("Calculates the embodied carbon of a BHoM Object based on explicitly defined volume, material and embodied carbon dataset.")]
-        [Input("obj", "The BHoM Object to calculate the embodied energy of. This method requires the object's volume to be stored in CustomData under a 'Volume' key.")]
-        [Input("material", "This is currently hardcoded as a BH.oM.Structure.MaterialFragments type - compatible with the current BHoM Materials Dataset.")]
-        [Input("embodiedCarbonData", "Currently a custom object with a valid value for embodied carbon stored in CustomData under an 'EmbodiedCarbon' key.")]
-        public static double EmbodiedCarbon(BHoMObject obj, IMaterialFragment material, CustomObject embodiedCarbonData)
+        [Description("Calculates the global warming potential of a BHoM Object based on explicitly defined volume and Environmental Product Declaration dataset.")]
+        [Input("obj", "The BHoM Object to calculate the embodied kg CO2 - Global Warming Potential. This method requires the object's volume to be stored in CustomData under a 'Volume' key.")]
+        [Input("EPDData", "Currently a custom object with a valid value for global warming potential stored in CustomData under an 'GlobalWarmingPotential' key.")]
+        public static double GlobalWarmingPotential(BHoMObject obj, CustomObject EPDData)
         {
-            double volume, density, embodiedCarbon;
+            double volume, density, globalWarmingPotential;
 
             if (obj.CustomData.ContainsKey("Volume"))
             {
@@ -54,21 +53,27 @@ namespace BH.Engine.ClimateEmergency
                 return 0;
             }
 
-
-            density = material.Density;
-
-
-            if (embodiedCarbonData.CustomData.ContainsKey("EmbodiedCarbon"))
+            if (EPDData.CustomData.ContainsKey("Density"))
             {
-                embodiedCarbon = (double)embodiedCarbonData.CustomData["EmbodiedCarbon"];
+                density = (double)EPDData.CustomData["Density"];
             }
             else
             {
-                BH.Engine.Reflection.Compute.RecordError("The embodiedCarbonDataset must have a valid value for embodied carbon stored in CustomData under an 'EmbodiedCarbon' key.");
+                BH.Engine.Reflection.Compute.RecordError("The EPDDataset must have a valid value for density under a 'Density' key.");
                 return 0;
             }
 
-            return volume * density * embodiedCarbon;
+            if (EPDData.CustomData.ContainsKey("GlobalWarmingPotential"))
+            {
+                globalWarmingPotential = (double)EPDData.CustomData["GlobalWarmingPotential"];
+            }
+            else
+            {
+                BH.Engine.Reflection.Compute.RecordError("The EPDDataset must have a valid value for global warming potential stored in CustomData under an 'GlobalWarmingPotential' key.");
+                return 0;
+            }
+
+            return volume * density * globalWarmingPotential;
         }
 
         /***************************************************/
