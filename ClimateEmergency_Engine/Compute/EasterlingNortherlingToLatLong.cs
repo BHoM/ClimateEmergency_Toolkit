@@ -35,9 +35,6 @@ namespace BH.Engine.ClimateEmergency
         /***************************************************/
         /****   Public Methods                          ****/
         /***************************************************/
-
-        public class LatLonConversions
-        {
             const double a = 6377563.396;
             const double b = 6356256.91;
             const double e2 = (a - b) / a;
@@ -49,8 +46,6 @@ namespace BH.Engine.ClimateEmergency
             const double n = (a - b) / (a + b);
 
             static double lat, lng;
-
-            private LatLonConversions() { }
 
             private static double Deg2Rad(double x)
             {
@@ -124,7 +119,7 @@ namespace BH.Engine.ClimateEmergency
                 lng = lambdaB;
             }
 
-            public static LatLon ConvertOSToLatLon(double easting, double northing)
+            public static List<double> ConvertOSToLatLon(double easting, double northing)
             {
                 RefEll airy1830 = new RefEll(6377563.396, 6356256.909);
                 double OSGB_F0 = 0.9996012717;
@@ -214,7 +209,8 @@ namespace BH.Engine.ClimateEmergency
                 // convert to WGS84
                 OSGB36ToWGS84();
 
-                return new LatLon(lat, lng);
+            //Reflection.Create.Output<double, double>(lat, lng);
+            return new List<double>() {lat, lng };
             }
         }
 
@@ -229,25 +225,6 @@ namespace BH.Engine.ClimateEmergency
             }
         }
 
-        public class LatLon
-        {
-            public double Latitude;
-            public double Longitude;
-
-            public LatLon()
-            {
-                Latitude = 0;
-                Longitude = 0;
-            }
-
-            public LatLon(double lat, double lon)
-            {
-                Latitude = lat;
-                Longitude = lon;
-            }
-        }
-
         /***************************************************/
 
-    }
 }
