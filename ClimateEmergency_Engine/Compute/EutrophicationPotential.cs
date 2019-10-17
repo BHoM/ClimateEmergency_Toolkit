@@ -36,12 +36,12 @@ namespace BH.Engine.ClimateEmergency
         /****   Public Methods                          ****/
         /***************************************************/
 
-        [Description("Calculates the acidification potential of a BHoM Object based on explicitly defined volume and Environmental Product Declaration dataset.")]
-        [Input("obj", "The BHoM Object to calculate the acidification potential (kg SO2). This method requires the object's volume to be stored in CustomData under a 'Volume' key.")]
-        [Input("EPDData", "Currently a custom object with a valid value for acidification potential stored in CustomData under an 'AcidificationPotential' key.")]
-        public static double AcidificationPotential(BHoMObject obj, CustomObject EPDData)
+        [Description("Calculates the eutrophication potential of a BHoM Object based on explicitly defined volume and Environmental Product Declaration dataset.")]
+        [Input("obj", "The BHoM Object to calculate the eutrophication potential (kg N or SO4). This method requires the object's volume to be stored in CustomData under a 'Volume' key.")]
+        [Input("EPDData", "Currently a custom object with a valid value for eutrophication potential stored in CustomData under an 'EutrophicationPotential' key.")]
+        public static double EutrophicationPotential(BHoMObject obj, CustomObject EPDData)
         {
-            double volume, density, acidificationPotential;
+            double volume, density, eutrophicationPotential;
 
             if (obj.CustomData.ContainsKey("Volume"))
             {
@@ -63,17 +63,17 @@ namespace BH.Engine.ClimateEmergency
                 return 0;
             }
 
-            if (EPDData.CustomData.ContainsKey("AcidificationPotential"))
+            if (EPDData.CustomData.ContainsKey("EutrophicationPotential"))
             {
-                acidificationPotential = (double)EPDData.CustomData["AcidificationPotential"];
+                eutrophicationPotential = (double)EPDData.CustomData["EutrophicationPotential"];
             }
             else
             {
-                BH.Engine.Reflection.Compute.RecordError("The EPDDataset must have a valid value for acidification potential stored in CustomData under an 'AcidificationPotential' key.");
+                BH.Engine.Reflection.Compute.RecordError("The EPDDataset must have a valid value for eutrophication potential stored in CustomData under an 'EutrophicationPotential' key.");
                 return 0;
             }
 
-            return volume * density * acidificationPotential;
+            return volume * density * eutrophicationPotential;
         }
 
         /***************************************************/
