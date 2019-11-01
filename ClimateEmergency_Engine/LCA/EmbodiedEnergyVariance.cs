@@ -40,9 +40,9 @@ namespace BH.Engine.ClimateEmergency
         [Input("Total Project Area", "Total area of the building, including all floor surface area in m2.")]
         [Input("Program Benchmark kgCO2/m2", "Benchmark kgCO2/m2 per building type based on program benchmark dataset")]
         [Input("Structural Benchmark kgCO2/m2", "Benchmark kgCO2/m2 per building structure based on structural benchmark dataset")]
-        public static double EmbodiedEnergyVariance(double projectEmbodiedCarbon, double projectArea, CustomObject embodiedCarbonBenchmarkTypeDataset, CustomObject embodiedCarbonBenchmarkStructureDataset)
+        public static double EmbodiedEnergyVariance(double projectEmbodiedCarbon, double projectArea, CustomObject embodiedCarbonBenchmarkTypeDataset, CustomObject embodiedCarbonBenchmarkStructureDataset, double typeWeighting, double structureWeighting)
         {
-            double typeBenchmark, structureBenchmark, typeWeighting = 20, structureWeighting = 80, weightedAverage;
+            double typeBenchmark, structureBenchmark, weightedAverage;
 
             if (embodiedCarbonBenchmarkTypeDataset.CustomData.ContainsKey("Average"))
             {
