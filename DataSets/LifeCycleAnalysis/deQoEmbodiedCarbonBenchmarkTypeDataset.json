@@ -1,0 +1,14 @@
+{ "Name" : "Residential - Single-family", "High" : 362.0, "Average" : 277.0, "Low" : 253.0, "Source" : "https://www.carbondeqo.com/database", "BHoM_Guid" : "77804d0b-8a33-4292-91ac-8d2d9a62c43f" }
+{ "Name" : "Residential - Multi-family - Medium rise (6-15 stories)", "High" : 397.0, "Average" : 168.0, "Low" : 150.0, "Source" : "https://www.carbondeqo.com/database", "BHoM_Guid" : "61cbaf36-d1fe-4faf-954e-a4e3e86716ad" }
+{ "Name" : "Residential - Multi-family - High rise (> 15 stories)", "High" : 342.0, "Average" : 257.0, "Low" : 206.0, "Source" : "https://www.carbondeqo.com/database", "BHoM_Guid" : "30227a4c-9d71-420b-a257-d0e44115d357" }
+{ "Name" : "Residential - Multi-family - Low rise (< 5 stories)", "High" : 202.0, "Average" : 159.0, "Low" : 131.0, "Source" : "https://www.carbondeqo.com/database", "BHoM_Guid" : "b702aa93-7955-4d0e-94cd-e8f9c5accbb7" }
+{ "Name" : "Commercial - Office", "High" : 413.0, "Average" : 329.0, "Low" : 244.0, "Source" : "https://www.carbondeqo.com/database", "BHoM_Guid" : "bec440d0-8081-48cd-a2a8-843928aeb0a3" }
+{ "Name" : "Industrial - Factories and Plants", "High" : 874.0, "Average" : 741.0, "Low" : 666.0, "Source" : "https://www.carbondeqo.com/database", "BHoM_Guid" : "ad6aa25a-9684-4564-a9ca-f8166d076742" }
+{ "Name" : "Infrastructure - Stadiums/Halls (Sports or Recreation Installations)", "High" : 534.0, "Average" : 377.0, "Low" : 233.0, "Source" : "https://www.carbondeqo.com/database", "BHoM_Guid" : "d314008b-902c-40b0-9aaa-34197765a8d1" }
+{ "Name" : "Other Non-Residential - Education", "High" : 252.0, "Average" : 289.0, "Low" : 524.0, "Source" : "https://www.carbondeqo.com/database", "BHoM_Guid" : "ccaaa08c-5c11-4cbe-947c-a01cd24a92b6" }
+{ "Name" : "Other Non-Residential - Healthcare", "High" : 479.0, "Average" : 378.0, "Low" : 279.0, "Source" : "https://www.carbondeqo.com/database", "BHoM_Guid" : "d57b50a4-a8f7-449e-9f2d-7cfda73f8c6f" }
+{ "Name" : "Other Non-Residential - Cultural or Institutional ", "High" : 588.0, "Average" : 418.0, "Low" : 307.0, "Source" : "https://www.carbondeqo.com/database", "BHoM_Guid" : "6a90240a-f91d-4958-b009-468d66a83868" }
+{ "Name" : "Other Non-Residential - Civic Building", "High" : 339.0, "Average" : 240.0, "Low" : 153.0, "Source" : "https://www.carbondeqo.com/database", "BHoM_Guid" : "cb9ecd49-1a05-4235-b41b-1cec3d78eb9c" }
+{ "Name" : "Other Non-Residential - Other", "High" : 902.0, "Average" : 656.0, "Low" : 495.0, "Source" : "https://www.carbondeqo.com/database", "BHoM_Guid" : "66e93989-fb0c-4448-a1bb-83fc810a4a26" }
+{ "Name" : "Other Non-Residential - Hotel/Motel/Hostel", "High" : 495.0, "Average" : 356.0, "Low" : 215.0, "Source" : "https://www.carbondeqo.com/database", "BHoM_Guid" : "7b54780f-8c46-4ff7-aff2-a6ca7f60463a" }
+{ "Name" : "Mixed Use - Residential/Office/Retail", "High" : 592.0, "Average" : 380.0, "Low" : 298.0, "Source" : "https://www.carbondeqo.com/database", "BHoM_Guid" : "e769a564-f08b-4fa2-b845-1a64e18b3b6c" }
