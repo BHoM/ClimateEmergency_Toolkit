@@ -66,7 +66,7 @@ namespace BH.Engine.ClimateEmergency
 
             weightedAverage = (((typeBenchmark * typeWeighting) + (structureBenchmark * structureWeighting)) / (typeWeighting + structureWeighting));
 
-            return (1 - ((projectEmbodiedCarbon / projectArea) / weightedAverage)) * 100;
+            return (((weightedAverage - (projectEmbodiedCarbon / projectArea)) / weightedAverage) * 100);
         }
 
         /***************************************************/
