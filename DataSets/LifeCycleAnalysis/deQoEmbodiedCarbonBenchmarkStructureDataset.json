@@ -1,0 +1,5 @@
+{ "Name" : "Steel", "High" : 410.0, "Average" : 157.0, "Low" : 145.0, "Source" : "https://www.carbondeqo.com/database", "BHoM_Guid" : "10e69c9e-928e-4416-91ac-26280a8df905" }
+{ "Name" : "Concrete", "High" : 468.0, "Average" : 306.0, "Low" : 201.0, "Source" : "https://www.carbondeqo.com/database", "BHoM_Guid" : "12d654e6-26e0-4ea5-9201-2d3c9c26e778" }
+{ "Name" : "Timber", "High" : 296.0, "Average" : 251.0, "Low" : 179.0, "Source" : "https://www.carbondeqo.com/database", "BHoM_Guid" : "de2ee511-b850-464a-8644-f5b354901255" }
+{ "Name" : "Masonry", "High" : 318.0, "Average" : 272.0, "Low" : 264.0, "Source" : "https://www.carbondeqo.com/database", "BHoM_Guid" : "2c58bf19-29e6-4933-8fca-028bc632d180" }
+{ "Name" : "Composite Concrete - Steel", "High" : 422.0, "Average" : 342.0, "Low" : 195.0, "Source" : "https://www.carbondeqo.com/database", "BHoM_Guid" : "09bebb0f-8681-4fd9-8b8c-0c2e2151fb2e" }
