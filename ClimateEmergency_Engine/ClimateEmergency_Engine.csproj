@@ -63,15 +63,8 @@
     <Compile Include="Compute\CalculateAssemblies\ConcreteVolume.cs" />
     <Compile Include="Compute\CalculateAssemblies\GlazingVolume.cs" />
     <Compile Include="Compute\CalculateAssemblies\ReinforcementVolume.cs" />
-    <Compile Include="Compute\DepletionofAbioticResourcesFossilFuels.cs" />
-    <Compile Include="Compute\DepletionofAbioticResources.cs" />
     <Compile Include="Compute\LCA\EmbodiedEnergyVariance.cs" />
-    <Compile Include="Compute\EutrophicationPotential.cs" />
-    <Compile Include="Compute\AcidificationPotential.cs" />
     <Compile Include="Compute\MaterialEndOfLifeTreatment.cs" />
-    <Compile Include="Compute\PhotochemicalOzoneCreationPotential.cs" />
-    <Compile Include="Compute\OzoneDepletionPotential.cs" />
-    <Compile Include="Compute\GlobalWarmingPotential.cs" />
     <Compile Include="Compute\ValueInputs\AcidificationPotential.cs" />
     <Compile Include="Compute\ValueInputs\DepletionofAbioticResources.cs" />
     <Compile Include="Compute\ValueInputs\DepletionofAbioticResourcesFossilFuels.cs" />
@@ -79,7 +72,23 @@
     <Compile Include="Compute\ValueInputs\GlobalWarmingPotential.cs" />
     <Compile Include="Compute\ValueInputs\OzoneDepletionPotential.cs" />
     <Compile Include="Compute\ValueInputs\PhotochemicalOzoneCreationPotential.cs" />
+    <Compile Include="Compute\LCA\DepletionofAbioticResourcesFossilFuels.cs" />
+    <Compile Include="Compute\LCA\DepletionofAbioticResources.cs" />
+    <Compile Include="Compute\LCA\EutrophicationPotential.cs" />
+    <Compile Include="Compute\LCA\AcidificationPotential.cs" />
+    <Compile Include="Compute\LCA\PhotochemicalOzoneCreationPotential.cs" />
+    <Compile Include="Compute\LCA\OzoneDepletionPotential.cs" />
+    <Compile Include="Compute\LCA\GlobalWarmingPotential.cs" />
+    <Compile Include="Compute\Water\PlumbingFixtureWaterDemandDaily.cs" />
+    <Compile Include="Create\Water\BuildingOccupancyByGender.cs" />
+    <Compile Include="Create\Water\BuildingPlumbingFixtureSelection.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ClimateEmergency_oM\ClimateEmergency_oM.csproj">
+      <Project>{a8372535-44b3-4652-bdca-1f967b1ebf35}</Project>
+      <Name>ClimateEmergency_oM</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
