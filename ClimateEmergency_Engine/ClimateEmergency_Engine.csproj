@@ -68,6 +68,7 @@
     <Compile Include="Compute\EutrophicationPotential.cs" />
     <Compile Include="Compute\AcidificationPotential.cs" />
     <Compile Include="Compute\EasterlingNortherlingToLatLong.cs" />
+    <Compile Include="Compute\MaterialEndOfLifeTreatment.cs" />
     <Compile Include="Compute\PhotochemicalOzoneCreationPotential.cs" />
     <Compile Include="Compute\OzoneDepletionPotential.cs" />
     <Compile Include="Compute\GlobalWarmingPotential.cs" />
