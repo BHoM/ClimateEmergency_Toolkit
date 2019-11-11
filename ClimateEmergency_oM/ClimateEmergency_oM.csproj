@@ -50,6 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DataSets\LifeCycleAnalysis\EmbodiedCarbon\" />
+    <Folder Include="DataSets\Water\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
