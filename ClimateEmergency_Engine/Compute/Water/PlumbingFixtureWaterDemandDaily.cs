@@ -40,6 +40,8 @@ namespace BH.Engine.ClimateEmergency
         [Input("BuildingPlumbingFixtureSelection", "The BHoM Object which contains the selected building plumbing fixtures. This method requires the object's flow per fixture to be set.")]
         [Input("BuildingOccupancybyGender", "The BHoM Object which contains the building's occupancy by gender. This method requires the object's occupancy percentages to be set.")]
         [Input("FixtureUsageDataSet", "The dataset or custom object which contains the residential or commercial building based daily usage of plumbing fixtures.")]
+        [Output("LitersofWaterPerDay", "The numbers of liters of water used on a daily basis by plumbing fixtures.")]
+
         public static double PlumbingFixtureWaterDemandPerDay(BuildingOccupancyByGender BuildingOccupancybyGender, BuildingPlumbingFixtureSelection BuildingPlumbingFixtureSelection, CustomObject FixtureUsageDataSet)
         {
 
