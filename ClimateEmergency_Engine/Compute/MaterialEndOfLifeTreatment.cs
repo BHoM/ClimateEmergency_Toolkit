@@ -37,7 +37,7 @@ namespace BH.Engine.ClimateEmergency
 
         [Description("Calculates the acidification potential of a BHoM Object based on explicitly defined volume and Environmental Product Declaration dataset.")]
         [Input("EPD Data", "Environmental Product Declaration of a specific material from an EPD Dataset.")]
-        [Output("EPD Scope", "End of Life treatment per material. This includes all data collected for LCA stages C1-C4 within a provided EPD dataset.")]
+        [Output("EOL Treatment", "End of Life treatment per material. This includes all data collected for LCA stages C1-C4 within a provided EPD dataset.")]
 
         public static string MaterialEndofLifeTreatment(CustomObject EPDdata)
         {
