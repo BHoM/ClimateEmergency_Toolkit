@@ -68,6 +68,13 @@
     <Compile Include="Compute\PhotochemicalOzoneCreationPotential.cs" />
     <Compile Include="Compute\OzoneDepletionPotential.cs" />
     <Compile Include="Compute\GlobalWarmingPotential.cs" />
+    <Compile Include="Compute\ValueInputs\AcidificationPotential.cs" />
+    <Compile Include="Compute\ValueInputs\DepletionofAbioticResources.cs" />
+    <Compile Include="Compute\ValueInputs\DepletionofAbioticResourcesFossilFuels.cs" />
+    <Compile Include="Compute\ValueInputs\EutrophicationPotential.cs" />
+    <Compile Include="Compute\ValueInputs\GlobalWarmingPotential.cs" />
+    <Compile Include="Compute\ValueInputs\OzoneDepletionPotential.cs" />
+    <Compile Include="Compute\ValueInputs\PhotochemicalOzoneCreationPotential.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
