@@ -36,25 +36,14 @@ namespace BH.Engine.ClimateEmergency
         /****   Public Methods                          ****/
         /***************************************************/
 
-        [Description("Calculates the depletion of abiotic resources fossil fuels of a BHoM Object based on explicitly defined volume and Environmental Product Declaration dataset.")]
-        [Input("volume", "Provide material volume in m^3. ")]
-        [Input("density", "Provide material density in kg/m^3. This value may be available within an EPD Dataset.")]
-        [Input("EPDData", "Currently a custom object with a valid value for depletion of abiotic resources of fossil fuels stored in CustomData under a 'DepletionOfAbioticResourcesFossilFuels' key.")]
-        public static double DepletionofAbioticResourcesFossilFuels(double volume, double density, CustomObject EPDData)
+        [Description("Returns concrete volume.")]
+        [Input("concreteVolume", "Gross volume of concrete building element m^3.")]
+        [Input("reinforcementVolume", "Percentage reinforcement within concrete building element m^3.")]
+        [Output("ActualConcreteVolume", "Actual volume of concrete building element less any reinforcement in m^3.")]
+
+        public static double ConcreteVolume(double concreteVolume, double reinforcementVolume)
         {
-            double depletionOfAbioticResourcesFossilFuels;
-
-            if (EPDData.CustomData.ContainsKey("DepletionOfAbioticResourcesFossilFuels"))
-            {
-                depletionOfAbioticResourcesFossilFuels = (double)EPDData.CustomData["DepletionOfAbioticResourcesFossilFuels"];
-            }
-            else
-            {
-                BH.Engine.Reflection.Compute.RecordError("The EPDDataset must have a valid value for acidification potential stored in CustomData under a 'DepletionOfAbioticResourcesFossilFuels' key.");
-                return 0;
-            }
-
-            return volume * density * depletionOfAbioticResourcesFossilFuels;
+            return concreteVolume - reinforcementVolume;
         }
 
         /***************************************************/

@@ -60,6 +60,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Compute\CalculateAssemblies\ConcreteVolume.cs" />
+    <Compile Include="Compute\CalculateAssemblies\GlazingVolume.cs" />
+    <Compile Include="Compute\CalculateAssemblies\ReinforcementVolume.cs" />
     <Compile Include="Compute\DepletionofAbioticResourcesFossilFuels.cs" />
     <Compile Include="Compute\DepletionofAbioticResources.cs" />
     <Compile Include="Compute\EutrophicationPotential.cs" />
