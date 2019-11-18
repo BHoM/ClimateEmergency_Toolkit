@@ -60,15 +60,28 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Compute\DepletionofAbioticResourcesFossilFuels.cs" />
-    <Compile Include="Compute\DepletionofAbioticResources.cs" />
-    <Compile Include="Compute\EutrophicationPotential.cs" />
-    <Compile Include="Compute\AcidificationPotential.cs" />
+    <Compile Include="Compute\LCA\ValueInputs\AcidificationPotential.cs" />
+    <Compile Include="Compute\CalculateAssemblies\ConcreteVolume.cs" />
+    <Compile Include="Compute\LCA\ValueInputs\DepletionofAbioticResources.cs" />
+    <Compile Include="Compute\LCA\DepletionofAbioticResourcesFossilFuels.cs" />
+    <Compile Include="Compute\LCA\DepletionofAbioticResources.cs" />
+    <Compile Include="Compute\LCA\ValueInputs\DepletionofAbioticResourcesFossilFuels.cs" />
+    <Compile Include="Compute\LCA\EutrophicationPotential.cs" />
+    <Compile Include="Compute\LCA\AcidificationPotential.cs" />
     <Compile Include="Compute\EasterlingNortherlingToLatLong.cs" />
-    <Compile Include="Compute\PhotochemicalOzoneCreationPotential.cs" />
-    <Compile Include="Compute\OzoneDepletionPotential.cs" />
-    <Compile Include="Compute\GlobalWarmingPotential.cs" />
+    <Compile Include="Compute\LCA\ValueInputs\EutrophicationPotential.cs" />
+    <Compile Include="Compute\CalculateAssemblies\GlazingVolume.cs" />
+    <Compile Include="Compute\LCA\ValueInputs\GlobalWarmingPotential.cs" />
+    <Compile Include="Compute\LCA\ValueInputs\OzoneDepletionPotential.cs" />
+    <Compile Include="Compute\LCA\PhotochemicalOzoneCreationPotential.cs" />
+    <Compile Include="Compute\LCA\OzoneDepletionPotential.cs" />
+    <Compile Include="Compute\LCA\GlobalWarmingPotential.cs" />
+    <Compile Include="Compute\EmbodiedEnergyVariance.cs" />
+    <Compile Include="Compute\MaterialEndOfLifeTreatment.cs" />
+    <Compile Include="Compute\LCA\ValueInputs\PhotochemicalOzoneCreationPotential.cs" />
+    <Compile Include="Compute\CalculateAssemblies\ReinforcementVolume.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
