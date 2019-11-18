@@ -60,6 +60,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Compute\CalculateAssemblies\CladdingVolume.cs" />
+    <Compile Include="Compute\LCA\LCAAggregateValues\FacadeLCA.cs" />
+    <Compile Include="Compute\LCA\LCAAggregateValues\StructureLCA.cs" />
     <Compile Include="Compute\LCA\ValueInputs\AcidificationPotential.cs" />
     <Compile Include="Compute\CalculateAssemblies\ConcreteVolume.cs" />
     <Compile Include="Compute\LCA\ValueInputs\DepletionofAbioticResources.cs" />
