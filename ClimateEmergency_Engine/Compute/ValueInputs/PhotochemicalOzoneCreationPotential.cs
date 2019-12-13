@@ -36,28 +36,15 @@ namespace BH.Engine.ClimateEmergency
         /****   Public Methods                          ****/
         /***************************************************/
 
-        [Description("Calculates the Photochemical Ozone Creation Potential of a BHoM Object based on explicitly defined volume and Environmental Product Declaration dataset.")]
+        [Description("Calculates the Photochemical Ozone Creation Potential of a specified object.")]
         [Input("volume", "Provide material volume in m^3. ")]
         [Input("density", "Provide material density in kg/m^3. This value may be available within an EPD Dataset.")]
-        [Input("EPDData", "Currently a custom object with a valid value for Photochemical Ozone Creation Potential stored in CustomData under a 'PhotochemicalOzoneCreationPotential' key.")]
-        public static double PhotochemicalOzoneCreationPotential(double volume, double density, CustomObject EPDData)
+        [Input("embodiedTrioxygen", "Amount of kg O3/m^3 equivalent. Refer to EPD dataset for corresponding input metric.")]
+        [Output("PhotochemicalOzoneCreationPotential", "The relative abilities of volatile organic compounds (VOCs) to produce ground level ozone (or Ethene) measured in kg/O3e.")]
+        public static double PhotochemicalOzoneCreationPotential(double volume = 0.0, double density = 0.0, double embodiedTrioxygen = 0.0)
         {
-            double photochemicalOzoneCreationPotential;
-
-            if (EPDData.CustomData.ContainsKey("PhotochemicalOzoneCreationPotential"))
-            {
-                photochemicalOzoneCreationPotential = (double)EPDData.CustomData["PhotochemicalOzoneCreationPotential"];
-            }
-            else
-            {
-                BH.Engine.Reflection.Compute.RecordError("The EPDDataset must have a valid value for Photochemical Ozone Creation Potential stored in CustomData under a 'PhotochemicalOzoneCreationPotential' key.");
-                return 0;
-            }
-
-            return volume * density * photochemicalOzoneCreationPotential;
+            return volume * density * embodiedTrioxygen;
         }
-
         /***************************************************/
-
     }
 }

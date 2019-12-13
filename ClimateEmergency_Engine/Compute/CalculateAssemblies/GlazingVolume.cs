@@ -41,7 +41,6 @@ namespace BH.Engine.ClimateEmergency
         [Input("glazingThickness", "Volume of reinforcement within concrete building element m^3.")]
         [Input("numberOfPanes", "Volume of reinforcement within concrete building element m^3.")]
         [Output("glazingVolume", "Percentage reinforcement within concrete building element m^3.")]
-
         public static double GlazingVolume(double glazingArea, double glazingThickness, double numberOfPanes)
         {
             return (glazingArea * glazingThickness) * numberOfPanes;

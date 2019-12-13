@@ -36,28 +36,15 @@ namespace BH.Engine.ClimateEmergency
         /****   Public Methods                          ****/
         /***************************************************/
 
-        [Description("Calculates the Ozone Depletion Potential of a BHoM Object based on explicitly defined volume and Environmental Product Declaration dataset.")]
+        [Description("Calculates the Ozone Depletion Potential of a specified object.")]
         [Input("volume", "Provide material volume in m^3. ")]
         [Input("density", "Provide material density in kg/m^3. This value may be available within an EPD Dataset.")]
-        [Input("EPDData", "Currently a custom object with a valid value for Ozone Depletion Potential stored in CustomData under a 'OzoneDepletionPotential' key.")]
-        public static double OzoneDepletionPotential(double volume, double density, CustomObject EPDData)
+        [Input("embodiedTrichlorofluoromethane", "Amount of kg CFC-11/m^3 equivalent. Refer to EPD dataset for corresponding input metric.")]
+        [Output("OzoneDepletionPotential", "The relative amount of degradation to the ozone layer measured in kg/CFC-11e.")]
+        public static double OzoneDepletionPotential(double volume = 0.0, double density = 0.0, double embodiedTrichlorofluoromethane = 0.0)
         {
-            double ozoneDepletionPotential;
-
-            if (EPDData.CustomData.ContainsKey("OzoneDepletionPotential"))
-            {
-                ozoneDepletionPotential = (double)EPDData.CustomData["OzoneDepletionPotential"];
-            }
-            else
-            {
-                BH.Engine.Reflection.Compute.RecordError("The EPDDataset must have a valid value for Ozone Depletion Potential stored in CustomData under a 'OzoneDepletionPotential' key.");
-                return 0;
-            }
-
-            return volume * density * ozoneDepletionPotential;
+            return volume * density * embodiedTrichlorofluoromethane;
         }
-
         /***************************************************/
-
     }
 }

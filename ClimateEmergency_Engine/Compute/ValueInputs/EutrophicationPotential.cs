@@ -36,28 +36,15 @@ namespace BH.Engine.ClimateEmergency
         /****   Public Methods                          ****/
         /***************************************************/
 
-        [Description("Calculates the Eutrophication Potential of a BHoM Object based on explicitly defined volume and Environmental Product Declaration dataset.")]
+        [Description("Calculates the Eutrophication Potential of a specified object.")]
         [Input("volume", "Provide material volume in m^3. ")]
         [Input("density", "Provide material density in kg/m^3. This value may be available within an EPD Dataset.")]
-        [Input("EPDData", "Currently a custom object with a valid value for Eutrophication Potential stored in CustomData under a 'EutrophicationPotential' key.")]
-        public static double EutrophicationPotential(double volume, double density, CustomObject EPDData)
+        [Input("embodiedPhosphate", "Amount of embodied kg PO4/m^3 equivalent. Refer to EPD dataset for corresponding input metric.")]
+        [Output("EutrophicationPotential", "The pollution state of aquatic ecosystems in which the over-fertilization of water and soil has turned into an increased growth of biomass measured in kg/PO4e.")]
+        public static double EutrophicationPotential(double volume = 0.0, double density =0.0, double embodiedPhosphate = 0.0)
         {
-            double eutrophicationPotential;
-
-            if (EPDData.CustomData.ContainsKey("EutrophicationPotential"))
-            {
-                eutrophicationPotential = (double)EPDData.CustomData["EutrophicationPotential"];
-            }
-            else
-            {
-                BH.Engine.Reflection.Compute.RecordError("The EPDDataset must have a valid value for Eutrophication Potential stored in CustomData under a 'EutrophicationPotential' key.");
-                return 0;
-            }
-
-            return volume * density * eutrophicationPotential;
+            return volume * density * embodiedPhosphate;
         }
-
         /***************************************************/
-
     }
 }
