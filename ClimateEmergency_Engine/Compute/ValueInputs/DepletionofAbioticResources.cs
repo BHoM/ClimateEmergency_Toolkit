@@ -36,28 +36,15 @@ namespace BH.Engine.ClimateEmergency
         /****   Public Methods                          ****/
         /***************************************************/
 
-        [Description("Calculates the depletion of abiotic resources of a BHoM Object based on explicitly defined volume and Environmental Product Declaration dataset.")]
+        [Description("Calculates the depletion of abiotic resources of a specific object.")]
         [Input("volume", "Provide material volume in m^3. ")]
         [Input("density", "Provide material density in kg/m^3. This value may be available within an EPD Dataset.")]
-        [Input("EPDData", "Currently a custom object with a valid value for depletion of abiotic resources stored in CustomData under a 'DepletionofAbioticResources' key.")]
-        public static double DepletionofAbioticResources(double volume, double density, CustomObject EPDData)
+        [Input("embodiedAntimony", "Amount of embodied kg SB/m^3 equivalent. These values can be referenced in typical EPD data as 'Depletion of Abiotic Resource Elements, non Fossil Fuel. Refer to EPD dataset for corresponding input metric.'")]
+        [Output("DepletionofAbioticResources", "The amount of depletion of non-renewable material resources measured in Sb (Antimony).")]
+        public static double DepletionofAbioticResources(double volume = 0.0, double density = 0.0, double embodiedAntimony = 0.0)
         {
-            double depletionofAbioticResources;
-
-            if (EPDData.CustomData.ContainsKey("DepletionofAbioticResources"))
-            {
-                depletionofAbioticResources = (double)EPDData.CustomData["DepletionofAbioticResources"];
-            }
-            else
-            {
-                BH.Engine.Reflection.Compute.RecordError("The EPDDataset must have a valid value for depletion of abiotic resources stored in CustomData under a 'DepletionofAbioticResources' key.");
-                return 0;
-            }
-
-            return volume * density * depletionofAbioticResources;
+            return volume * density * embodiedAntimony;
         }
-
         /***************************************************/
-
     }
 }

@@ -40,14 +40,10 @@ namespace BH.Engine.ClimateEmergency
         [Input("concreteVolume", "Volume of concrete building element m^3.")]
         [Input("percentageReinforcement", "Percentage reinforcement within concrete building element m^3.")]
         [Output("ReinforcementVolume", "Percentage reinforcement within concrete building element m^3.")]
-
         public static double ReinforcementVolume(double concreteVolume, double percentageReinforcement)
         {
-            double reinforcementVolume;
-
             return concreteVolume * (percentageReinforcement * .01);
         }
-
         /***************************************************/
 
     }
