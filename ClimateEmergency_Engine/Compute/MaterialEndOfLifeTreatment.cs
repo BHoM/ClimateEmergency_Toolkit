@@ -36,24 +36,22 @@ namespace BH.Engine.ClimateEmergency
         /***************************************************/
 
         [Description("Returns End of Life processing information contained within an EPD dataset.")]
-        [Input("EPD Data", "Environmental Product Declaration of a specific material from an EPD Dataset.")]
+        [Input("epdData", "Environmental Product Declaration of a specific material from an EPD Dataset.")]
         [Output("EOL Treatment", "End of Life treatment per material. This includes all data collected for LCA stages C1-C4 within a provided EPD dataset.")]
-
-        public static string MaterialEndofLifeTreatment(CustomObject EPDdata)
+        public static string MaterialEndofLifeTreatment(CustomObject epddata)
         {
             string treatmentEOL;
 
-            if (EPDdata.CustomData.ContainsKey("TreatmentEOL"))
+            if (epddata.CustomData.ContainsKey("TreatmentEOL"))
             {
-                return (string)EPDdata.CustomData["TreatmentEOL"];
+                return (string)epddata.CustomData["TreatmentEOL"];
             }
             else
             {
                 BH.Engine.Reflection.Compute.RecordError("The EPDDataset must have a valid value for Treatment EOL under a 'TreatmentEOL' key.");
-                return (string)"No data to record. Please provide missing data within 'TreatmentEOL' key.";
+                return "No data to record. Please provide missing data within 'TreatmentEOL' key.";
             }
         }
-
         /***************************************************/
 
     }
