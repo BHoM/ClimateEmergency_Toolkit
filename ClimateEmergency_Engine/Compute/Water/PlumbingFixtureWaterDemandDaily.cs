@@ -37,29 +37,27 @@ namespace BH.Engine.ClimateEmergency
         /***************************************************/
 
         [Description("Calculates the plumbing fixture water demand per day using the plumbing fixture flows and the building occupancy.")]
-        [Input("BuildingPlumbingFixtureSelection", "The BHoM Object which contains the selected building plumbing fixtures. This method requires the object's flow per fixture to be set.")]
-        [Input("BuildingOccupancybyGender", "The BHoM Object which contains the building's occupancy by gender. This method requires the object's occupancy percentages to be set.")]
-        [Input("FixtureUsageDataSet", "The dataset or custom object which contains the residential or commercial building based daily usage of plumbing fixtures.")]
+        [Input("buildingPlumbingFixtureSelection", "The BHoM Object which contains the selected building plumbing fixtures. This method requires the object's flow per fixture to be set.")]
+        [Input("buildingOccupancybyGender", "The BHoM Object which contains the building's occupancy by gender. This method requires the object's occupancy percentages to be set.")]
+        [Input("fixtureUsageDataSet", "The dataset or custom object which contains the residential or commercial building based daily usage of plumbing fixtures.")]
         [Output("LitersofWaterPerDay", "The numbers of liters of water used on a daily basis by plumbing fixtures.")]
-
-        public static double PlumbingFixtureWaterDemandPerDay(BuildingOccupancyByGender BuildingOccupancybyGender, BuildingPlumbingFixtureSelection BuildingPlumbingFixtureSelection, CustomObject FixtureUsageDataSet)
+        public static double plumbingFixtureWaterDemandPerDay(BuildingOccupancyByGender buildingOccupancybyGender, BuildingPlumbingFixtureSelection buildingPlumbingFixtureSelection, CustomObject fixtureUsageDataSet)
         {
+            double numberFemales = (double)buildingOccupancybyGender.BuildingOccupancy * buildingOccupancybyGender.FemalePercentage;
+            double numberMales = (double)buildingOccupancybyGender.BuildingOccupancy * buildingOccupancybyGender.MalePercentage;
+            double numberGenderNeutral = (double)buildingOccupancybyGender.BuildingOccupancy * buildingOccupancybyGender.GenderNeutralPercentage;
 
-            double numberfemales = (double)BuildingOccupancybyGender.BuildingOccupancy * BuildingOccupancybyGender.FemalePercentage;
-            double numbermales = (double)BuildingOccupancybyGender.BuildingOccupancy * BuildingOccupancybyGender.MalePercentage;
-            double numbergenderneutral = (double)BuildingOccupancybyGender.BuildingOccupancy * BuildingOccupancybyGender.GenderNeutralPercentage;
+            double toiletFlow = buildingPlumbingFixtureSelection.ToiletFlow;
+            double lavatoryFlow = buildingPlumbingFixtureSelection.LavatoryFlow;
+            double urinalFlow = buildingPlumbingFixtureSelection.UrinalFlow;
+            double showerFlow = buildingPlumbingFixtureSelection.ShowerFlow;
+            double kitchenFaucetFlow = buildingPlumbingFixtureSelection.KitchenFaucetFlow;
 
-            double toiletflow = BuildingPlumbingFixtureSelection.ToiletFlow;
-            double lavatoryflow = BuildingPlumbingFixtureSelection.LavatoryFlow;
-            double urinalflow = BuildingPlumbingFixtureSelection.UrinalFlow;
-            double showerflow = BuildingPlumbingFixtureSelection.ShowerFlow;
-            double kitchenfaucetflow = BuildingPlumbingFixtureSelection.KitchenFaucetFlow;
+            double toiletNumberOfUsesMale = 0.0;
 
-            double toiletnumberofusesmale = 0.0;
-
-            if (FixtureUsageDataSet.CustomData.ContainsKey("ToiletNumberOfUsesMale"))
+            if (fixtureUsageDataSet.CustomData.ContainsKey("ToiletNumberOfUsesMale"))
             {
-                toiletnumberofusesmale = (double)FixtureUsageDataSet.CustomData["ToiletNumberOfUsesMale"];
+                toiletNumberOfUsesMale = (double)fixtureUsageDataSet.CustomData["ToiletNumberOfUsesMale"];
             }
             else
             {
@@ -67,11 +65,11 @@ namespace BH.Engine.ClimateEmergency
                 return 0;
             }
 
-            double toiletnumberofusesfemale = 0.0;
+            double toiletNumberOfUsesFemale = 0.0;
 
-            if (FixtureUsageDataSet.CustomData.ContainsKey("ToiletNumberOfUsesFemale"))
+            if (fixtureUsageDataSet.CustomData.ContainsKey("ToiletNumberOfUsesFemale"))
             {
-                toiletnumberofusesfemale = (double)FixtureUsageDataSet.CustomData["ToiletNumberOfUsesFemale"];
+                toiletNumberOfUsesFemale = (double)fixtureUsageDataSet.CustomData["ToiletNumberOfUsesFemale"];
             }
             else
             {
@@ -79,11 +77,11 @@ namespace BH.Engine.ClimateEmergency
                 return 0;
             }
 
-            double toiletnumberofusesgenderneutral = 0.0;
+            double toiletNumberOfUsesGenderNeutral = 0.0;
 
-            if (FixtureUsageDataSet.CustomData.ContainsKey("ToiletNumberOfUsesGenderNeutral"))
+            if (fixtureUsageDataSet.CustomData.ContainsKey("ToiletNumberOfUsesGenderNeutral"))
             {
-                toiletnumberofusesgenderneutral = (double)FixtureUsageDataSet.CustomData["ToiletNumberOfUsesGenderNeutral"];
+                toiletNumberOfUsesGenderNeutral = (double)fixtureUsageDataSet.CustomData["ToiletNumberOfUsesGenderNeutral"];
             }
             else
             {
@@ -91,11 +89,11 @@ namespace BH.Engine.ClimateEmergency
                 return 0;
             }
 
-            double showernumberofusesmale = 0.0;
+            double showerNumberOfUsesMale = 0.0;
 
-            if (FixtureUsageDataSet.CustomData.ContainsKey("ShowerNumberOfUsesMale"))
+            if (fixtureUsageDataSet.CustomData.ContainsKey("ShowerNumberOfUsesMale"))
             {
-                showernumberofusesmale = (double)FixtureUsageDataSet.CustomData["ShowerNumberOfUsesMale"];
+                showerNumberOfUsesMale = (double)fixtureUsageDataSet.CustomData["ShowerNumberOfUsesMale"];
             }
             else
             {
@@ -103,11 +101,11 @@ namespace BH.Engine.ClimateEmergency
                 return 0;
             }
 
-            double showernumberofusesfemale = 0.0;
+            double showerNumberOfUsesFemale = 0.0;
 
-            if (FixtureUsageDataSet.CustomData.ContainsKey("ShowerNumberOfUsesFemale"))
+            if (fixtureUsageDataSet.CustomData.ContainsKey("ShowerNumberOfUsesFemale"))
             {
-                showernumberofusesfemale = (double)FixtureUsageDataSet.CustomData["ShowerNumberOfUsesFemale"];
+                showerNumberOfUsesFemale = (double)fixtureUsageDataSet.CustomData["ShowerNumberOfUsesFemale"];
             }
             else
             {
@@ -115,11 +113,11 @@ namespace BH.Engine.ClimateEmergency
                 return 0;
             }
 
-            double showernumberofusesgenderneutral = 0.0;
+            double showerNumberOfUsesGenderNeutral = 0.0;
 
-            if (FixtureUsageDataSet.CustomData.ContainsKey("ShowerNumberOfUsesGenderNeutral"))
+            if (fixtureUsageDataSet.CustomData.ContainsKey("ShowerNumberOfUsesGenderNeutral"))
             {
-                showernumberofusesgenderneutral = (double)FixtureUsageDataSet.CustomData["ShowerNumberOfUsesGenderNeutral"];
+                showerNumberOfUsesGenderNeutral = (double)fixtureUsageDataSet.CustomData["ShowerNumberOfUsesGenderNeutral"];
             }
             else
             {
@@ -127,11 +125,11 @@ namespace BH.Engine.ClimateEmergency
                 return 0;
             }
 
-            double kitchenfaucetnumberofusesmale = 0.0;
+            double kitchenFaucetNumberOfUsesMale = 0.0;
 
-            if (FixtureUsageDataSet.CustomData.ContainsKey("KitchenFaucetNumberOfUsesMale"))
+            if (fixtureUsageDataSet.CustomData.ContainsKey("KitchenFaucetNumberOfUsesMale"))
             {
-                kitchenfaucetnumberofusesmale = (double)FixtureUsageDataSet.CustomData["KitchenFaucetNumberOfUsesMale"];
+                kitchenFaucetNumberOfUsesMale = (double)fixtureUsageDataSet.CustomData["KitchenFaucetNumberOfUsesMale"];
             }
             else
             {
@@ -139,11 +137,11 @@ namespace BH.Engine.ClimateEmergency
                 return 0;
             }
 
-            double kitchenfaucetnumberofusesfemale = 0.0;
+            double kitchenFaucetNumberOfUsesFemale = 0.0;
 
-            if (FixtureUsageDataSet.CustomData.ContainsKey("KitchenFaucetNumberOfUsesFemale"))
+            if (fixtureUsageDataSet.CustomData.ContainsKey("KitchenFaucetNumberOfUsesFemale"))
             {
-                kitchenfaucetnumberofusesfemale = (double)FixtureUsageDataSet.CustomData["KitchenFaucetNumberOfUsesFemale"];
+                kitchenFaucetNumberOfUsesFemale = (double)fixtureUsageDataSet.CustomData["KitchenFaucetNumberOfUsesFemale"];
             }
             else
             {
@@ -151,11 +149,11 @@ namespace BH.Engine.ClimateEmergency
                 return 0;
             }
 
-            double kitchenfaucetnumberofusesgenderneutral = 0.0;
+            double kitchenFaucetNumberOfUsesGenderNeutral = 0.0;
 
-            if (FixtureUsageDataSet.CustomData.ContainsKey("KitchenFaucetNumberOfUsesGenderNeutral"))
+            if (fixtureUsageDataSet.CustomData.ContainsKey("KitchenFaucetNumberOfUsesGenderNeutral"))
             {
-                kitchenfaucetnumberofusesgenderneutral = (double)FixtureUsageDataSet.CustomData["KitchenFaucetNumberOfUsesGenderNeutral"];
+                kitchenFaucetNumberOfUsesGenderNeutral = (double)fixtureUsageDataSet.CustomData["KitchenFaucetNumberOfUsesGenderNeutral"];
             }
             else
             {
@@ -163,11 +161,11 @@ namespace BH.Engine.ClimateEmergency
                 return 0;
             }
 
-            double lavatorynumberofusesmale = 0.0;
+            double lavatoryNumberOfUsesMale = 0.0;
 
-            if (FixtureUsageDataSet.CustomData.ContainsKey("LavatoryNumberOfUsesMale"))
+            if (fixtureUsageDataSet.CustomData.ContainsKey("LavatoryNumberOfUsesMale"))
             {
-                lavatorynumberofusesmale = (double)FixtureUsageDataSet.CustomData["LavatoryNumberOfUsesMale"];
+                lavatoryNumberOfUsesMale = (double)fixtureUsageDataSet.CustomData["LavatoryNumberOfUsesMale"];
             }
             else
             {
@@ -175,11 +173,11 @@ namespace BH.Engine.ClimateEmergency
                 return 0;
             }
 
-            double lavatorynumberofusesfemale = 0.0;
+            double lavatoryNumberOfUsesFemale = 0.0;
 
-            if (FixtureUsageDataSet.CustomData.ContainsKey("LavatoryNumberOfUsesFemale"))
+            if (fixtureUsageDataSet.CustomData.ContainsKey("LavatoryNumberOfUsesFemale"))
             {
-                lavatorynumberofusesfemale = (double)FixtureUsageDataSet.CustomData["LavatoryNumberOfUsesFemale"];
+                lavatoryNumberOfUsesFemale = (double)fixtureUsageDataSet.CustomData["LavatoryNumberOfUsesFemale"];
             }
             else
             {
@@ -187,11 +185,11 @@ namespace BH.Engine.ClimateEmergency
                 return 0;
             }
 
-            double lavatorynumberofusesgenderneutral = 0.0;
+            double lavatoryNumberOfUsesGenderNeutral = 0.0;
 
-            if (FixtureUsageDataSet.CustomData.ContainsKey("LavatoryNumberOfUsesGenderNeutral"))
+            if (fixtureUsageDataSet.CustomData.ContainsKey("LavatoryNumberOfUsesGenderNeutral"))
             {
-                lavatorynumberofusesgenderneutral = (double)FixtureUsageDataSet.CustomData["LavatoryNumberOfUsesGenderNeutral"];
+                lavatoryNumberOfUsesGenderNeutral = (double)fixtureUsageDataSet.CustomData["LavatoryNumberOfUsesGenderNeutral"];
             }
             else
             {
@@ -199,11 +197,11 @@ namespace BH.Engine.ClimateEmergency
                 return 0;
             }
 
-            double urinalnumberofusesmale = 0.0;
+            double urinalNumberOfUsesMale = 0.0;
 
-            if (FixtureUsageDataSet.CustomData.ContainsKey("UrinalNumberOfUsesMale"))
+            if (fixtureUsageDataSet.CustomData.ContainsKey("UrinalNumberOfUsesMale"))
             {
-                urinalnumberofusesmale = (double)FixtureUsageDataSet.CustomData["UrinalNumberOfUsesMale"];
+                urinalNumberOfUsesMale = (double)fixtureUsageDataSet.CustomData["UrinalNumberOfUsesMale"];
             }
             else
             {
@@ -211,15 +209,15 @@ namespace BH.Engine.ClimateEmergency
                 return 0;
             }
 
-            double totaldailytoiletflow = (numbermales * toiletnumberofusesmale * toiletflow) + (numberfemales * toiletnumberofusesfemale * toiletflow) + (numbergenderneutral * toiletnumberofusesgenderneutral * toiletflow);
+            double totaldailytoiletflow = (numberMales * toiletNumberOfUsesMale * toiletFlow) + (numberFemales * toiletNumberOfUsesFemale * toiletFlow) + (numberGenderNeutral * toiletNumberOfUsesGenderNeutral * toiletFlow);
 
-            double totaldailylavatoryflow = (numbermales * lavatorynumberofusesmale * lavatoryflow) + (numberfemales * lavatorynumberofusesfemale * lavatoryflow) + (numbergenderneutral * lavatorynumberofusesgenderneutral * lavatoryflow);
+            double totaldailylavatoryflow = (numberMales * lavatoryNumberOfUsesMale * lavatoryFlow) + (numberFemales * lavatoryNumberOfUsesFemale * lavatoryFlow) + (numberGenderNeutral * lavatoryNumberOfUsesGenderNeutral * lavatoryFlow);
 
-            double totaldailykitchenfaucetflow = (numbermales * kitchenfaucetnumberofusesmale * kitchenfaucetflow) + (numberfemales * kitchenfaucetnumberofusesfemale * kitchenfaucetflow) + (numbergenderneutral * kitchenfaucetnumberofusesgenderneutral * kitchenfaucetflow);
+            double totaldailykitchenfaucetflow = (numberMales * kitchenFaucetNumberOfUsesMale * kitchenFaucetFlow) + (numberFemales * kitchenFaucetNumberOfUsesFemale * kitchenFaucetFlow) + (numberGenderNeutral * kitchenFaucetNumberOfUsesGenderNeutral * kitchenFaucetFlow);
 
-            double totaldailyshowerflow = (numbermales * showernumberofusesmale * showerflow) + (numberfemales * showernumberofusesfemale * showerflow) + (numbergenderneutral * showernumberofusesgenderneutral * showerflow);
+            double totaldailyshowerflow = (numberMales * showerNumberOfUsesMale * showerFlow) + (numberFemales * showerNumberOfUsesFemale * showerFlow) + (numberGenderNeutral * showerNumberOfUsesGenderNeutral * showerFlow);
 
-            double totaldailyurinalflow = (numbermales * urinalnumberofusesmale * urinalflow);
+            double totaldailyurinalflow = (numberMales * urinalNumberOfUsesMale * urinalFlow);
 
             double totaldailyplumbingfixturewaterdemand = totaldailytoiletflow + totaldailykitchenfaucetflow + totaldailylavatoryflow + totaldailyshowerflow + totaldailyurinalflow;
 

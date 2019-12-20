@@ -30,7 +30,6 @@ namespace BH.oM.ClimateEmergency.Water
 {
     public class BuildingOccupancyByGender
     {
-
         public int BuildingOccupancy { get; set; } = 0;
         public double FemalePercentage { get; set; } = 0.5;
         public double MalePercentage { get; set; } = 0.5;
