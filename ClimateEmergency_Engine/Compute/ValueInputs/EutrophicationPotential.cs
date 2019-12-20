@@ -36,11 +36,11 @@ namespace BH.Engine.ClimateEmergency
         /****   Public Methods                          ****/
         /***************************************************/
 
-        [Description("Calculates the Eutrophication Potential of a specified object.")]
+        [Description("Calculates the Eutrophication Potential  from volume, density, and embodied Phosphate quantities. These quantities may be provided within Environmental Product Declaration documentation.")]
         [Input("volume", "Provide material volume in m^3. ")]
         [Input("density", "Provide material density in kg/m^3. This value may be available within an EPD Dataset.")]
         [Input("embodiedPhosphate", "Amount of embodied kg PO4/m^3 equivalent. Refer to EPD dataset for corresponding input metric.")]
-        [Output("EutrophicationPotential", "The pollution state of aquatic ecosystems in which the over-fertilization of water and soil has turned into an increased growth of biomass measured in kg/PO4e.")]
+        [Output("eutrophicationPotential", "The pollution state of aquatic ecosystems in which the over-fertilization of water and soil has turned into an increased growth of biomass measured in kg/PO4e.")]
         public static double EutrophicationPotential(double volume = 0.0, double density =0.0, double embodiedPhosphate = 0.0)
         {
             return volume * density * embodiedPhosphate;

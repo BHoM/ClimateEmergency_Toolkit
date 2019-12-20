@@ -36,7 +36,7 @@ namespace BH.Engine.ClimateEmergency
         /****   Public Methods                          ****/
         /***************************************************/
 
-        [Description("Returns glazing volume from a surface.")]
+        [Description("Returns glazing volume from the properties of a surface object.")]
         [Input("glazingArea", "Volume of concrete building element m^3.")]
         [Input("glazingThickness", "Volume of reinforcement within concrete building element m^3.")]
         [Input("numberOfPanes", "Volume of reinforcement within concrete building element m^3.")]

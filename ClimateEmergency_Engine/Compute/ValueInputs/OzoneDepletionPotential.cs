@@ -36,11 +36,11 @@ namespace BH.Engine.ClimateEmergency
         /****   Public Methods                          ****/
         /***************************************************/
 
-        [Description("Calculates the Ozone Depletion Potential of a specified object.")]
-        [Input("volume", "Provide material volume in m^3. ")]
+        [Description("Calculates the Ozone Depletion Potential from volume, density, and embodied Trichlorofluoromethane quantities. These quantities may be provided within Environmental Product Declaration documentation.")]
+        [Input("volume", "Provide material volume in m^3.")]
         [Input("density", "Provide material density in kg/m^3. This value may be available within an EPD Dataset.")]
         [Input("embodiedTrichlorofluoromethane", "Amount of kg CFC-11/m^3 equivalent. Refer to EPD dataset for corresponding input metric.")]
-        [Output("OzoneDepletionPotential", "The relative amount of degradation to the ozone layer measured in kg/CFC-11e.")]
+        [Output("ozoneDepletionPotential", "The relative amount of degradation to the ozone layer measured in kg/CFC-11e.")]
         public static double OzoneDepletionPotential(double volume = 0.0, double density = 0.0, double embodiedTrichlorofluoromethane = 0.0)
         {
             return volume * density * embodiedTrichlorofluoromethane;
