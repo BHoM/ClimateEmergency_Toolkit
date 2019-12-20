@@ -36,11 +36,11 @@ namespace BH.Engine.ClimateEmergency
         /****   Public Methods                          ****/
         /***************************************************/
 
-        [Description("Calculates the depletion of abiotic resources fossil fuels of a specified object.")]
+        [Description("Calculates the depletion of abiotic resources fossil fuels from volume, density, and embodied Methyl Jasmonate quantities. These quantities may be provided within Environmental Product Declaration documentation.")]
         [Input("volume", "Provide material volume in m^3.")]
         [Input("density", "Provide material density in kg/m^3. This value may be available within an EPD Dataset.")]
         [Input("embodiedMethylJasmonate", "Amount of embodied kg MJ/m^3 equivalent. These values can also be referenced within typical EPD data as 'Depletion of Abiotic Resources Fossil Fuels' or 'Primary Energy Demand'. Refer to EPD dataset for corresponding input metric.")]
-        [Output("DepletionOfAbioticResourcesFossilFuels", "The amount of depletion of non-renewable, fossil fuel material resources measured in kg/MJ.")]
+        [Output("depletionOfAbioticResourcesFossilFuels", "The amount of depletion of non-renewable, fossil fuel material resources measured in kg/MJ.")]
         public static double DepletionOfAbioticResourcesFossilFuels(double volume = 0.0, double density = 0.0, double embodiedMethylJasmonate = 0.0)
         {
             return volume * density * embodiedMethylJasmonate;

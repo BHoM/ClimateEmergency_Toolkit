@@ -36,11 +36,11 @@ namespace BH.Engine.ClimateEmergency
         /****   Public Methods                          ****/
         /***************************************************/
 
-        [Description("Calculates the acidification potential of a specified object.")]
+        [Description("Calculates the acidification potential from volume, density, and embodied Sulfer Dioxide quantities. These quantities may be provided within Environmental Product Declaration documentation.")]
         [Input("volume", "Provide material volume in m^3.")]
         [Input("density", "Provide material density in kg/m^3. This value may be available within an EPD Dataset.")]
         [Input("embodiedSulfurDioxide", "Amount of embodied kg SO2/m^3 equivalent. Refer to EPD dataset for corresponding input metric.")]
-        [Output("AcidificationPotential", "The consequence of acids being emitted to the atmosphere and subsequently deposited in surface soils and waters measured in kg/SO2e.")]
+        [Output("acidificationPotential", "The consequence of acids being emitted to the atmosphere and subsequently deposited in surface soils and waters measured in kg/SO2e.")]
         public static double AcidificationPotential(double volume = 0.0, double density = 0.0, double embodiedSulfurDioxide = 0.0)
         {
             return volume * density * embodiedSulfurDioxide;

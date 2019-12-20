@@ -36,11 +36,11 @@ namespace BH.Engine.ClimateEmergency
         /****   Public Methods                          ****/
         /***************************************************/
 
-        [Description("Calculates the Photochemical Ozone Creation Potential of a specified object.")]
-        [Input("volume", "Provide material volume in m^3. ")]
+        [Description("Calculates the Photochemical Ozone Creation Potential from volume, density, and embodied Trioxygen quantities. These quantities may be provided within Environmental Product Declaration documentation.")]
+        [Input("volume", "Provide material volume in m^3.")]
         [Input("density", "Provide material density in kg/m^3. This value may be available within an EPD Dataset.")]
         [Input("embodiedTrioxygen", "Amount of kg O3/m^3 equivalent. Refer to EPD dataset for corresponding input metric.")]
-        [Output("PhotochemicalOzoneCreationPotential", "The relative abilities of volatile organic compounds (VOCs) to produce ground level ozone (or Ethene) measured in kg/O3e.")]
+        [Output("photochemicalOzoneCreationPotential", "The relative abilities of volatile organic compounds (VOCs) to produce ground level ozone (or Ethene) measured in kg/O3e.")]
         public static double PhotochemicalOzoneCreationPotential(double volume = 0.0, double density = 0.0, double embodiedTrioxygen = 0.0)
         {
             return volume * density * embodiedTrioxygen;

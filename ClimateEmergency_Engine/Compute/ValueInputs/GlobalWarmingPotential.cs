@@ -36,11 +36,11 @@ namespace BH.Engine.ClimateEmergency
         /****   Public Methods                          ****/
         /***************************************************/
 
-        [Description("Calculates the global warming potential of a specified object.")]
+        [Description("Calculates the global warming potential from volume, density, and embodied Carbon quantities. These quantities may be provided within Environmental Product Declaration documentation.")]
         [Input("volume", "Provide material volume in m^3.")]
         [Input("density", "Provide material density in kg/m^3. This value may be available within an EPD Dataset.")]
         [Input("embodiedCarbon", "Amount of kg CO2/m^3 equivalent. These values can also be referenced within typical EPD data as 'Global Warming Potential' or 'Embodied Carbon'. Refer to EPD dataset for corresponding input metric.")]
-        [Output("GlobalWarmingPotential", "How much heat a greenhouse gas traps in the atmosphere up to a specific time horizon, relative to carbon dioxide measured in kg/CO2e.")]
+        [Output("globalWarmingPotential", "How much heat a greenhouse gas traps in the atmosphere up to a specific time horizon, relative to carbon dioxide measured in kg/CO2e.")]
         public static double GlobalWarmingPotential(double volume = 0.0, double density = 0.0, double embodiedCarbon = 0.0)
         {
             return volume * density * embodiedCarbon;
