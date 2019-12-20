@@ -65,6 +65,7 @@
     <Compile Include="Compute\CalculateAssemblies\ReinforcementVolume.cs" />
     <Compile Include="Compute\DepletionofAbioticResourcesFossilFuels.cs" />
     <Compile Include="Compute\DepletionofAbioticResources.cs" />
+    <Compile Include="Compute\EmbodiedEnergyVariance.cs" />
     <Compile Include="Compute\EutrophicationPotential.cs" />
     <Compile Include="Compute\AcidificationPotential.cs" />
     <Compile Include="Compute\EasterlingNortherlingToLatLong.cs" />
