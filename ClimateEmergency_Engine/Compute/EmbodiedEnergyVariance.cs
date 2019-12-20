@@ -42,7 +42,7 @@ namespace BH.Engine.ClimateEmergency
         [Input("embodiedCarbonBenchmarkStructureDataset", "Benchmark kgCO2/m2 per building structure based on structural benchmark dataset.")]
         [Input("typeWeighting", "Subjective weighting of program type benchmark results. Used in LCA to prioritize different CO2 dataset assumptions.")]
         [Input("structureWeighting", "Subjective weighting of structure type benchmark results. Used in LCA to prioritize different CO2 dataset assumptions.")]
-        [Output("EmbodiedCarbonPercentageVariance", "Percentage variance between current project being evaluated and benchmark datasets.")]
+        [Output("embodiedCarbonPercentageVariance", "Percentage variance between current project being evaluated and benchmark datasets.")]
         public static double EmbodiedEnergyVariance(double projectEmbodiedCarbon, double projectArea, CustomObject embodiedCarbonBenchmarkTypeDataset, CustomObject embodiedCarbonBenchmarkStructureDataset, double typeWeighting, double structureWeighting)
         {
             double typeBenchmark = 0.0; 
