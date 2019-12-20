@@ -43,7 +43,6 @@ namespace BH.Engine.ClimateEmergency
         [Input("showerFlow", "Default 0.0")]
         [Input("kitchenFaucetFlow", "Default 0.0")]
         [Output("building plumbing fixture selection object")]
-
         public static BuildingPlumbingFixtureSelection BuildingPlumbingFixtureSelection(double toiletFlow = 0.0, double urinalFlow = 0.0, double lavatoryFlow = 0.0, double showerFlow = 0.0, double kitchenFaucetFlow = 0.0)
         {
             return new BuildingPlumbingFixtureSelection

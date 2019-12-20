@@ -42,7 +42,6 @@ namespace BH.Engine.ClimateEmergency
         [Input("malePercentage", "Default 0.5")]
         [Input("genderNeutralPercentage", "Default 0.0")]
         [Output("building occupancy by gender object")]
-
         public static BuildingOccupancyByGender BuildingOccupancyByGender(int buildingOccupancy = 0, double femalePercentage = 0.5, double malePercentage = 0.5, double genderNeutralPercentage = 0.0)
         {
             return new BuildingOccupancyByGender
