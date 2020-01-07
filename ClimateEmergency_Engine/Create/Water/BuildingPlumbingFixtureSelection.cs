@@ -42,7 +42,7 @@ namespace BH.Engine.ClimateEmergency
         [Input("urinalVolumePerUse", "Default 0.0")]
         [Input("lavatoryVolumePerUse", "Default 0.0")]
         [Input("showerVolumePerUse", "Default 0.0")]
-        [Input("KitchenFaucetPerUse", "Default 0.0")]
+        [Input("kitchenFaucetPerUse", "Default 0.0")]
         [Output("building plumbing fixture selection object")]
         public static BuildingPlumbingFixtureSelection BuildingPlumbingFixtureSelection(double toiletVolumePerUse = 0.0, double urinalVolumePerUse = 0.0, double lavatoryVolumePerUse = 0.0, double showerVolumePerUse = 0.0, double kitchenFaucetPerUse = 0.0)
         {
