@@ -40,9 +40,9 @@ namespace BH.Engine.ClimateEmergency
         [Input("obj", "The BHoM Object to calculate the depletion of abiotic resources (fossil fuels) (kg methyl jasmonate). This method requires the object's volume to be stored in CustomData under a 'Volume' key.")]
         [Input("epdData", "BHoM Data object with a valid value for depletion of abiotic (fossil fuels) stored in CustomData under an 'DepletionofAbioticResourcesFossilFuels' key.")]
         [Output("depletionOfAbioticResourcesFossilFuels", "The amount of depletion of non-renewable, fossil fuel material resources measured in kg/MJ.")]
-        public static double DepletionofAbioticResourcesFossilFuels(BHoMObject obj, CustomObject epdData)
+        public static double DepletionOfAbioticResourcesFossilFuels(BHoMObject obj, CustomObject epdData)
         {
-            double volume, density, depletionofAbioticResourcesFossilFuels;
+            double volume, density, depletionOfAbioticResourcesFossilFuels;
 
             if (obj.CustomData.ContainsKey("Volume"))
             {
@@ -64,17 +64,17 @@ namespace BH.Engine.ClimateEmergency
                 return 0;
             }
 
-            if (epdData.CustomData.ContainsKey("DepletionofAbioticResourcesFossilFuels"))
+            if (epdData.CustomData.ContainsKey("DepletionOfAbioticResourcesFossilFuels"))
             {
-                depletionofAbioticResourcesFossilFuels = System.Convert.ToDouble(epdData.CustomData["DepletionofAbioticResourcesFossilFuels"]);
+                depletionOfAbioticResourcesFossilFuels = System.Convert.ToDouble(epdData.CustomData["DepletionOfAbioticResourcesFossilFuels"]);
             }
             else
             {
-                BH.Engine.Reflection.Compute.RecordError("The EPDDataset must have a valid value for Depletion of Abiotic Resources Fossil Fuels stored in CustomData under an 'DepletionofAbioticResourcesFossilFuels' key.");
+                BH.Engine.Reflection.Compute.RecordError("The EPDDataset must have a valid value for Depletion of Abiotic Resources Fossil Fuels stored in CustomData under an 'DepletionOfAbioticResourcesFossilFuels' key.");
                 return 0;
             }
 
-            return volume * density * depletionofAbioticResourcesFossilFuels;
+            return volume * density * depletionOfAbioticResourcesFossilFuels;
 
 
             /***************************************************/
