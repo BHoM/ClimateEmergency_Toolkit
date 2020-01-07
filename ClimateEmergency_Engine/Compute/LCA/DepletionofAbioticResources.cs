@@ -46,7 +46,7 @@ namespace BH.Engine.ClimateEmergency
 
             if (obj.CustomData.ContainsKey("Volume"))
             {
-                volume = (double)obj.CustomData["Volume"];
+                volume = System.Convert.ToDouble(obj.CustomData["Volume"]);
             }
             else
             {
@@ -56,7 +56,7 @@ namespace BH.Engine.ClimateEmergency
 
             if (epdData.CustomData.ContainsKey("Density"))
             {
-                density = (double)epdData.CustomData["Density"];
+                density = System.Convert.ToDouble(epdData.CustomData["Density"]);
             }
             else
             {
@@ -66,7 +66,7 @@ namespace BH.Engine.ClimateEmergency
 
             if (epdData.CustomData.ContainsKey("DepletionofAbioticResources"))
             {
-                depletionofAbioticResources = (double)epdData.CustomData["DepletionofAbioticResources"];
+                depletionofAbioticResources = System.Convert.ToDouble(epdData.CustomData["DepletionofAbioticResources"]);
             }
             else
             {
