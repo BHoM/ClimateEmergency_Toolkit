@@ -38,8 +38,9 @@ namespace BH.Engine.ClimateEmergency
 
         [Description("Calculates the depletion of abiotic resources (fossil fuels) of a BHoM Object based on explicitly defined volume and Environmental Product Declaration dataset.")]
         [Input("obj", "The BHoM Object to calculate the depletion of abiotic resources (fossil fuels) (kg methyl jasmonate). This method requires the object's volume to be stored in CustomData under a 'Volume' key.")]
-        [Input("EPDData", "Currently a custom object with a valid value for depletion of abiotic (fossil fuels) stored in CustomData under an 'DepletionofAbioticResourcesFossilFuels' key.")]
-        public static double DepletionofAbioticResourcesFossilFuels(BHoMObject obj, CustomObject EPDData)
+        [Input("epdData", "BHoM Data object with a valid value for depletion of abiotic (fossil fuels) stored in CustomData under an 'DepletionofAbioticResourcesFossilFuels' key.")]
+        [Output("depletionOfAbioticResourcesFossilFuels", "The amount of depletion of non-renewable, fossil fuel material resources measured in kg/MJ.")]
+        public static double DepletionofAbioticResourcesFossilFuels(BHoMObject obj, CustomObject epdData)
         {
             double volume, density, depletionofAbioticResourcesFossilFuels;
 
@@ -53,9 +54,9 @@ namespace BH.Engine.ClimateEmergency
                 return 0;
             }
 
-            if (EPDData.CustomData.ContainsKey("Density"))
+            if (epdData.CustomData.ContainsKey("Density"))
             {
-                density = (double)EPDData.CustomData["Density"];
+                density = (double)epdData.CustomData["Density"];
             }
             else
             {
@@ -63,9 +64,9 @@ namespace BH.Engine.ClimateEmergency
                 return 0;
             }
 
-            if (EPDData.CustomData.ContainsKey("DepletionofAbioticResourcesFossilFuels"))
+            if (epdData.CustomData.ContainsKey("DepletionofAbioticResourcesFossilFuels"))
             {
-                depletionofAbioticResourcesFossilFuels = (double)EPDData.CustomData["DepletionofAbioticResourcesFossilFuels"];
+                depletionofAbioticResourcesFossilFuels = (double)epdData.CustomData["DepletionofAbioticResourcesFossilFuels"];
             }
             else
             {

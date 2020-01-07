@@ -38,8 +38,10 @@ namespace BH.Engine.ClimateEmergency
 
         [Description("Calculates the eutrophication potential of a BHoM Object based on explicitly defined volume and Environmental Product Declaration dataset.")]
         [Input("obj", "The BHoM Object to calculate the eutrophication potential (kg N or SO4). This method requires the object's volume to be stored in CustomData under a 'Volume' key.")]
-        [Input("EPDData", "Currently a custom object with a valid value for eutrophication potential stored in CustomData under an 'EutrophicationPotential' key.")]
-        public static double EutrophicationPotential(BHoMObject obj, CustomObject EPDData)
+        [Input("epdData", "BHoM Data object with a valid value for eutrophication potential stored in CustomData under an 'EutrophicationPotential' key.")]
+        [Output("eutrophicationPotential", "The pollution state of aquatic ecosystems in which the over-fertilization of water and soil has turned into an increased growth of biomass measured in kg/PO4e.")]
+
+        public static double EutrophicationPotential(BHoMObject obj, CustomObject epdData)
         {
             double volume, density, eutrophicationPotential;
 
@@ -53,9 +55,9 @@ namespace BH.Engine.ClimateEmergency
                 return 0;
             }
 
-            if (EPDData.CustomData.ContainsKey("Density"))
+            if (epdData.CustomData.ContainsKey("Density"))
             {
-                density = (double)EPDData.CustomData["Density"];
+                density = (double)epdData.CustomData["Density"];
             }
             else
             {
@@ -63,9 +65,9 @@ namespace BH.Engine.ClimateEmergency
                 return 0;
             }
 
-            if (EPDData.CustomData.ContainsKey("EutrophicationPotential"))
+            if (epdData.CustomData.ContainsKey("EutrophicationPotential"))
             {
-                eutrophicationPotential = (double)EPDData.CustomData["EutrophicationPotential"];
+                eutrophicationPotential = (double)epdData.CustomData["EutrophicationPotential"];
             }
             else
             {
