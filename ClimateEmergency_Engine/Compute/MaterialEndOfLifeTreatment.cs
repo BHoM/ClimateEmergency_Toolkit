@@ -37,8 +37,8 @@ namespace BH.Engine.ClimateEmergency
 
         [Description("Returns End of Life processing information contained within an EPD dataset.")]
         [Input("epdData", "Environmental Product Declaration of a specific material from an EPD Dataset.")]
-        [Output("eolTreatment", "End of Life treatment per material. This includes all data collected for LCA stages C1-C4 within a provided EPD dataset.")]
-        public static string MaterialEndofLifeTreatment(CustomObject epdData)
+        [Output("materialEndOfLifeTreatment", "End of Life treatment per material. This includes all data collected for LCA stages C1-C4 within a provided EPD dataset.")]
+        public static string MaterialEndOfLifeTreatment(CustomObject epdData)
         {
             if (epdData.CustomData.ContainsKey("TreatmentEOL"))
             {

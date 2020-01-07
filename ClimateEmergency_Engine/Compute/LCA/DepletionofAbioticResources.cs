@@ -38,8 +38,9 @@ namespace BH.Engine.ClimateEmergency
 
         [Description("Calculates the depletion of abiotic resources of a BHoM Object based on explicitly defined volume and Environmental Product Declaration dataset.")]
         [Input("obj", "The BHoM Object to calculate the depletion of abiotic resources (kg Antimony). This method requires the object's volume to be stored in CustomData under a 'Volume' key.")]
-        [Input("EPDData", "Currently a custom object with a valid value for depletion of abiotic resources stored in CustomData under an 'DepletionofAbioticResources' key.")]
-        public static double DepletionofAbioticResources(BHoMObject obj, CustomObject EPDData)
+        [Input("epdData", "BHoM Data object with a valid value for depletion of abiotic resources stored in CustomData under an 'DepletionofAbioticResources' key.")]
+        [Output("depletionofAbioticResources", "The amount of depletion of non-renewable material resources measured in Sb (Antimony).")]
+        public static double DepletionofAbioticResources(BHoMObject obj, CustomObject epdData)
         {
             double volume, density, depletionofAbioticResources;
 
@@ -53,9 +54,9 @@ namespace BH.Engine.ClimateEmergency
                 return 0;
             }
 
-            if (EPDData.CustomData.ContainsKey("Density"))
+            if (epdData.CustomData.ContainsKey("Density"))
             {
-                density = (double)EPDData.CustomData["Density"];
+                density = (double)epdData.CustomData["Density"];
             }
             else
             {
@@ -63,9 +64,9 @@ namespace BH.Engine.ClimateEmergency
                 return 0;
             }
 
-            if (EPDData.CustomData.ContainsKey("DepletionofAbioticResources"))
+            if (epdData.CustomData.ContainsKey("DepletionofAbioticResources"))
             {
-                depletionofAbioticResources = (double)EPDData.CustomData["DepletionofAbioticResources"];
+                depletionofAbioticResources = (double)epdData.CustomData["DepletionofAbioticResources"];
             }
             else
             {

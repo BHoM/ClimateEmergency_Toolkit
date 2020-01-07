@@ -38,8 +38,10 @@ namespace BH.Engine.ClimateEmergency
 
         [Description("Calculates the global warming potential of a BHoM Object based on explicitly defined volume and Environmental Product Declaration dataset.")]
         [Input("obj", "The BHoM Object to calculate the embodied kg CO2 - Global Warming Potential. This method requires the object's volume to be stored in CustomData under a 'Volume' key.")]
-        [Input("EPDData", "Currently a custom object with a valid value for global warming potential stored in CustomData under a 'GlobalWarmingPotential' key.")]
-        public static double GlobalWarmingPotential(BHoMObject obj, CustomObject EPDData)
+        [Input("epdData", "BHoM Data object with a valid value for global warming potential stored in CustomData under a 'GlobalWarmingPotential' key.")]
+        [Output("globalWarmingPotential", "How much heat a greenhouse gas traps in the atmosphere up to a specific time horizon, relative to carbon dioxide measured in kg/CO2e.")]
+
+        public static double GlobalWarmingPotential(BHoMObject obj, CustomObject epdData)
         {
             double volume, density, globalWarmingPotential;
 
@@ -53,9 +55,9 @@ namespace BH.Engine.ClimateEmergency
                 return 0;
             }
 
-            if (EPDData.CustomData.ContainsKey("Density"))
+            if (epdData.CustomData.ContainsKey("Density"))
             {
-                density = (double)EPDData.CustomData["Density"];
+                density = (double)epdData.CustomData["Density"];
             }
             else
             {
@@ -63,9 +65,9 @@ namespace BH.Engine.ClimateEmergency
                 return 0;
             }
 
-            if (EPDData.CustomData.ContainsKey("GlobalWarmingPotential"))
+            if (epdData.CustomData.ContainsKey("GlobalWarmingPotential"))
             {
-                globalWarmingPotential = (double)EPDData.CustomData["GlobalWarmingPotential"];
+                globalWarmingPotential = (double)epdData.CustomData["GlobalWarmingPotential"];
             }
             else
             {

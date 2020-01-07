@@ -38,8 +38,9 @@ namespace BH.Engine.ClimateEmergency
 
         [Description("Calculates the acidification potential of a BHoM Object based on explicitly defined volume and Environmental Product Declaration dataset.")]
         [Input("obj", "The BHoM Object to calculate the acidification potential (kg SO2). This method requires the object's volume to be stored in CustomData under a 'Volume' key.")]
-        [Input("EPDData", "Currently a custom object with a valid value for acidification potential stored in CustomData under an 'AcidificationPotential' key.")]
-        public static double AcidificationPotential(BHoMObject obj, CustomObject EPDData)
+        [Input("epdData", "BHoM Data object with a valid value for acidification potential stored in CustomData under an 'AcidificationPotential' key.")]
+        [Output("acidificationPotential", "The consequence of acids being emitted to the atmosphere and subsequently deposited in surface soils and waters measured in kg/SO2e.")]
+        public static double AcidificationPotential(BHoMObject obj, CustomObject epdData)
         {
             double volume, density, acidificationPotential;
 
@@ -53,9 +54,9 @@ namespace BH.Engine.ClimateEmergency
                 return 0;
             }
 
-            if (EPDData.CustomData.ContainsKey("Density"))
+            if (epdData.CustomData.ContainsKey("Density"))
             {
-                density = (double)EPDData.CustomData["Density"];
+                density = (double)epdData.CustomData["Density"];
             }
             else
             {
@@ -63,9 +64,9 @@ namespace BH.Engine.ClimateEmergency
                 return 0;
             }
 
-            if (EPDData.CustomData.ContainsKey("AcidificationPotential"))
+            if (epdData.CustomData.ContainsKey("AcidificationPotential"))
             {
-                acidificationPotential = (double)EPDData.CustomData["AcidificationPotential"];
+                acidificationPotential = (double)epdData.CustomData["AcidificationPotential"];
             }
             else
             {

@@ -38,8 +38,9 @@ namespace BH.Engine.ClimateEmergency
 
         [Description("Calculates the ozone depletion potential of a BHoM Object based on explicitly defined volume and Environmental Product Declaration dataset.")]
         [Input("obj", "The BHoM Object to calculate the object's Ozone Depletion Potential (kg CFC). This method requires the object's volume to be stored in CustomData under a 'Volume' key.")]
-        [Input("EPDData", "Currently a custom object with a valid value for ozone depletion potential stored in CustomData under an 'OzoneDepletionPotential' key.")]
-        public static double OzoneDepletionPotential(BHoMObject obj, CustomObject EPDData)
+        [Input("epdData", "BHoM Data object with a valid value for ozone depletion potential stored in CustomData under an 'OzoneDepletionPotential' key.")]
+        [Output("ozoneDepletionPotential", "The relative amount of degradation to the ozone layer measured in kg/CFC-11e.")]
+        public static double OzoneDepletionPotential(BHoMObject obj, CustomObject epdData)
         {
             double volume, density, ozoneDepletionPotential;
 
@@ -53,9 +54,9 @@ namespace BH.Engine.ClimateEmergency
                 return 0;
             }
 
-            if (EPDData.CustomData.ContainsKey("Density"))
+            if (epdData.CustomData.ContainsKey("Density"))
             {
-                density = (double)EPDData.CustomData["Density"];
+                density = (double)epdData.CustomData["Density"];
             }
             else
             {
@@ -63,9 +64,9 @@ namespace BH.Engine.ClimateEmergency
                 return 0;
             }
 
-            if (EPDData.CustomData.ContainsKey("OzoneDepletionPotential"))
+            if (epdData.CustomData.ContainsKey("OzoneDepletionPotential"))
             {
-                ozoneDepletionPotential = (double)EPDData.CustomData["OzoneDepletionPotential"];
+                ozoneDepletionPotential = (double)epdData.CustomData["OzoneDepletionPotential"];
             }
             else
             {

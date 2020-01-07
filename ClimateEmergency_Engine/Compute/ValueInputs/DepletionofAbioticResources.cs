@@ -40,8 +40,8 @@ namespace BH.Engine.ClimateEmergency
         [Input("volume", "Provide material volume in m^3.")]
         [Input("density", "Provide material density in kg/m^3. This value may be available within an EPD Dataset.")]
         [Input("embodiedAntimony", "Amount of embodied kg SB/m^3 equivalent. These values can be referenced in typical EPD data as 'Depletion of Abiotic Resource Elements, non Fossil Fuel. Refer to EPD dataset for corresponding input metric.'")]
-        [Output("depletionofAbioticResources", "The amount of depletion of non-renewable material resources measured in Sb (Antimony).")]
-        public static double DepletionofAbioticResources(double volume = 0.0, double density = 0.0, double embodiedAntimony = 0.0)
+        [Output("depletionOfAbioticResources", "The amount of depletion of non-renewable material resources measured in Sb (Antimony).")]
+        public static double DepletionOfAbioticResources(double volume = 0.0, double density = 0.0, double embodiedAntimony = 0.0)
         {
             return volume * density * embodiedAntimony;
         }

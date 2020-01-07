@@ -38,8 +38,10 @@ namespace BH.Engine.ClimateEmergency
 
         [Description("Calculates the photochemical ozone creation potential of a BHoM Object based on explicitly defined volume and Environmental Product Declaration dataset.")]
         [Input("obj", "The BHoM Object to calculate the Photochemical Ozone Creation Potential (kg O3). This method requires the object's volume to be stored in CustomData under a 'Volume' key.")]
-        [Input("EPDData", "Currently a custom object with a valid value for photochemical ozone creation potential stored in CustomData under an 'PhotochemicalOzoneCreationPotential' key.")]
-        public static double PhotochemicalOzoneCreationPotential(BHoMObject obj, CustomObject EPDData)
+        [Input("epdData", "BHoM Data object with a valid value for photochemical ozone creation potential stored in CustomData under an 'PhotochemicalOzoneCreationPotential' key.")]
+        [Output("photochemicalOzoneCreationPotential", "The relative abilities of volatile organic compounds (VOCs) to produce ground level ozone (or Ethene) measured in kg/O3e.")]
+
+        public static double PhotochemicalOzoneCreationPotential(BHoMObject obj, CustomObject epdData)
         {
             double volume, density, photochemicalOzoneCreationPotential;
 
@@ -53,9 +55,9 @@ namespace BH.Engine.ClimateEmergency
                 return 0;
             }
 
-            if (EPDData.CustomData.ContainsKey("Density"))
+            if (epdData.CustomData.ContainsKey("Density"))
             {
-                density = (double)EPDData.CustomData["Density"];
+                density = (double)epdData.CustomData["Density"];
             }
             else
             {
@@ -63,9 +65,9 @@ namespace BH.Engine.ClimateEmergency
                 return 0;
             }
 
-            if (EPDData.CustomData.ContainsKey("PhotochemicalOzoneCreationPotential"))
+            if (epdData.CustomData.ContainsKey("PhotochemicalOzoneCreationPotential"))
             {
-                photochemicalOzoneCreationPotential = (double)EPDData.CustomData["GlobalWarmingPotential"];
+                photochemicalOzoneCreationPotential = (double)epdData.CustomData["GlobalWarmingPotential"];
             }
             else
             {
