@@ -39,10 +39,10 @@ namespace BH.Engine.ClimateEmergency
         [Description("Calculates the depletion of abiotic resources of a BHoM Object based on explicitly defined volume and Environmental Product Declaration dataset.")]
         [Input("obj", "The BHoM Object to calculate the depletion of abiotic resources (kg Antimony). This method requires the object's volume to be stored in CustomData under a 'Volume' key.")]
         [Input("epdData", "BHoM Data object with a valid value for depletion of abiotic resources stored in CustomData under an 'DepletionofAbioticResources' key.")]
-        [Output("depletionofAbioticResources", "The amount of depletion of non-renewable material resources measured in Sb (Antimony).")]
-        public static double DepletionofAbioticResources(BHoMObject obj, CustomObject epdData)
+        [Output("depletionOfAbioticResources", "The amount of depletion of non-renewable material resources measured in Sb (Antimony).")]
+        public static double DepletionOfAbioticResources(BHoMObject obj, CustomObject epdData)
         {
-            double volume, density, depletionofAbioticResources;
+            double volume, density, depletionOfAbioticResources;
 
             if (obj.CustomData.ContainsKey("Volume"))
             {
@@ -64,17 +64,17 @@ namespace BH.Engine.ClimateEmergency
                 return 0;
             }
 
-            if (epdData.CustomData.ContainsKey("DepletionofAbioticResources"))
+            if (epdData.CustomData.ContainsKey("DepletionOfAbioticResources"))
             {
-                depletionofAbioticResources = System.Convert.ToDouble(epdData.CustomData["DepletionofAbioticResources"]);
+                depletionOfAbioticResources = System.Convert.ToDouble(epdData.CustomData["DepletionOfAbioticResources"]);
             }
             else
             {
-                BH.Engine.Reflection.Compute.RecordError("The EPDDataset must have a valid value for Depletion of Abiotic Resources stored in CustomData under an 'DepletionofAbioticResources' key.");
+                BH.Engine.Reflection.Compute.RecordError("The EPDDataset must have a valid value for Depletion of Abiotic Resources stored in CustomData under an 'DepletionOfAbioticResources' key.");
                 return 0;
             }
 
-            return volume * density * depletionofAbioticResources;
+            return volume * density * depletionOfAbioticResources;
 
 
             /***************************************************/
