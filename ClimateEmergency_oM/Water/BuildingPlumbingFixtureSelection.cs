@@ -30,10 +30,10 @@ namespace BH.oM.ClimateEmergency.Water
 {
     public class BuildingPlumbingFixtureSelection
     {
-        public double ToiletFlow { get; set; } = 0.0;
-        public double UrinalFlow { get; set; } = 0.0;
-        public double LavatoryFlow { get; set; } = 0.0;
-        public double ShowerFlow { get; set; } = 0.0;
-        public double KitchenFaucetFlow { get; set; } = 0.0;
+        public double ToiletVolumePerUse { get; set; } = 0.0;
+        public double UrinalVolumePerUse { get; set; } = 0.0;
+        public double LavatoryVolumePerUse { get; set; } = 0.0;
+        public double ShowerVolumePerUse { get; set; } = 0.0;
+        public double KitchenFaucetPerUse { get; set; } = 0.0;
     }
 }

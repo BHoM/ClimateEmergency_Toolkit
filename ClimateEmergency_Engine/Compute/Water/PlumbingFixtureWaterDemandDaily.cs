@@ -40,18 +40,18 @@ namespace BH.Engine.ClimateEmergency
         [Input("buildingPlumbingFixtureSelection", "The BHoM Object which contains the selected building plumbing fixtures. This method requires the object's flow per fixture to be set.")]
         [Input("buildingOccupancybyGender", "The BHoM Object which contains the building's occupancy by gender. This method requires the object's occupancy percentages to be set.")]
         [Input("fixtureUsageDataSet", "The dataset or custom object which contains the residential or commercial building based daily usage of plumbing fixtures.")]
-        [Output("LitersofWaterPerDay", "The numbers of liters of water used on a daily basis by plumbing fixtures.")]
-        public static double plumbingFixtureWaterDemandPerDay(BuildingOccupancyByGender buildingOccupancybyGender, BuildingPlumbingFixtureSelection buildingPlumbingFixtureSelection, CustomObject fixtureUsageDataSet)
+        [Output("WaterPerDay", "The amount of water in m^3 used on a daily basis by plumbing fixtures.")]
+        public static double PlumbingFixtureWaterDemandPerDay(BuildingOccupancyByGender buildingOccupancybyGender, BuildingPlumbingFixtureSelection buildingPlumbingFixtureSelection, CustomObject fixtureUsageDataSet)
         {
             double numberFemales = (double)buildingOccupancybyGender.BuildingOccupancy * buildingOccupancybyGender.FemalePercentage;
             double numberMales = (double)buildingOccupancybyGender.BuildingOccupancy * buildingOccupancybyGender.MalePercentage;
             double numberGenderNeutral = (double)buildingOccupancybyGender.BuildingOccupancy * buildingOccupancybyGender.GenderNeutralPercentage;
 
-            double toiletFlow = buildingPlumbingFixtureSelection.ToiletFlow;
-            double lavatoryFlow = buildingPlumbingFixtureSelection.LavatoryFlow;
-            double urinalFlow = buildingPlumbingFixtureSelection.UrinalFlow;
-            double showerFlow = buildingPlumbingFixtureSelection.ShowerFlow;
-            double kitchenFaucetFlow = buildingPlumbingFixtureSelection.KitchenFaucetFlow;
+            double toiletFlow = buildingPlumbingFixtureSelection.ToiletVolumePerUse;
+            double lavatoryFlow = buildingPlumbingFixtureSelection.UrinalVolumePerUse;
+            double urinalFlow = buildingPlumbingFixtureSelection.LavatoryVolumePerUse;
+            double showerFlow = buildingPlumbingFixtureSelection.ShowerVolumePerUse;
+            double kitchenFaucetFlow = buildingPlumbingFixtureSelection.KitchenFaucetPerUse;
 
             double toiletNumberOfUsesMale = 0.0;
 
