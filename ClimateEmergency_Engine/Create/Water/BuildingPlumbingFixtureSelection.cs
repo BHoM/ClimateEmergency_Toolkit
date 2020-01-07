@@ -1,6 +1,6 @@
 ﻿/*
  * This file is part of the Buildings and Habitats object Model (BHoM)
- * Copyright (c) 2015 - 2019, the respective contributors. All rights reserved.
+ * Copyright (c) 2015 - 2020, the respective contributors. All rights reserved.
  *
  * Each contributor holds copyright over their respective contributions.
  * The project versioning (Git) records all such contribution source information.
@@ -19,6 +19,7 @@
  * You should have received a copy of the GNU Lesser General Public License     
  * along with this code. If not, see <https://www.gnu.org/licenses/lgpl-3.0.html>.      
  */
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -37,11 +38,11 @@ namespace BH.Engine.ClimateEmergency
         /***************************************************/
 
         [Description("Returns the building plumbing fixture selection")]
-        [Input("toiletFlow", "Default 0.0")]
-        [Input("urinalFlow", "Default 0.0")]
-        [Input("lavatoryFlow", "Default 0.0")]
-        [Input("showerFlow", "Default 0.0")]
-        [Input("kitchenFaucetFlow", "Default 0.0")]
+        [Input("toiletVolumePerUse", "Default 0.0")]
+        [Input("urinalVolumePerUse", "Default 0.0")]
+        [Input("lavatoryVolumePerUse", "Default 0.0")]
+        [Input("showerVolumePerUse", "Default 0.0")]
+        [Input("KitchenFaucetPerUse", "Default 0.0")]
         [Output("building plumbing fixture selection object")]
         public static BuildingPlumbingFixtureSelection BuildingPlumbingFixtureSelection(double toiletVolumePerUse = 0.0, double urinalVolumePerUse = 0.0, double lavatoryVolumePerUse = 0.0, double showerVolumePerUse = 0.0, double kitchenFaucetPerUse = 0.0)
         {
