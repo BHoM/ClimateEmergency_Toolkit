@@ -40,10 +40,11 @@ namespace BH.Engine.ClimateEmergency
         [Input("obj", "The BHoM Object to calculate the eutrophication potential (kg N or SO4). This method requires the object's volume to be stored in CustomData under a 'Volume' key.")]
         [Input("epdData", "BHoM Data object with a valid value for eutrophication potential stored in CustomData under an 'EutrophicationPotential' key.")]
         [Output("eutrophicationPotential", "The pollution state of aquatic ecosystems in which the over-fertilization of water and soil has turned into an increased growth of biomass measured in kg/PO4e.")]
-
         public static double EutrophicationPotential(BHoMObject obj, CustomObject epdData)
         {
-            double volume, density, eutrophicationPotential;
+            double volume = 0.0;
+            double density = 0.0;
+            double eutrophicationPotential = 0.0;
 
             if (obj.CustomData.ContainsKey("Volume"))
             {
