@@ -44,30 +44,40 @@ namespace BH.Engine.ClimateEmergency
         [Description("Returns mass of an IBHoMObject")]
         [Input("obj", "Any IBHoMObject for which to calculate the mass. Must contain location data sufficient to define volume and a material density.")]
         [Output("mass", "Volume of the object in m^3.")]
-        public static double Mass(object obj)
-        {
-            return IMass(obj as IBHoMObject); // not clear on how this is properly done, to expose Mass() but not IMass and have this work with no conflicts.
-        }
-
-        /***************************************************/
-
-        private static double IMass(IBHoMObject obj)
+        public static double IMass(IBHoMObject obj)
         {
             return Mass(obj as dynamic);
         }
 
         /***************************************************/
 
+        private static double Mass(object obj)
+        {
+            BH.Engine.Reflection.Compute.RecordWarning("Could not compute mass for the object.");
+            return 0;
+        }
+
+        /***************************************************/
+
         private static double Mass(Bar obj)
         {
-            return obj.Length() * obj.SectionProperty.MassPerMetre();
+            if (obj.SectionProperty != null)
+                return Engine.Structure.Query.Mass(obj);
+            else
+                BH.Engine.Reflection.Compute.RecordWarning("Bar has no SectionProperty. Could not compute mass.");
+                return 0;
         }
 
         /***************************************************/
 
         private static double Mass(Panel obj)
         {
-            return obj.Area() * obj.Property.IMassPerArea();
+            if (obj.Property != null)
+                return Engine.Structure.Query.Mass(obj);
+            else
+                BH.Engine.Reflection.Compute.RecordWarning("Panel has no SurfaceProperty. Could not compute mass.");
+            return 0;
+
         }
 
         /***************************************************/

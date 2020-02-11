@@ -44,11 +44,20 @@ namespace BH.Engine.ClimateEmergency
         public static double EvaluateEPD(BHoMObject obj, CustomObject epdData, string epdField)
         {
             double mass = IMass(obj);
-            double epdValue;
+
+            double epdValue = 0;
 
             if (epdData.CustomData.ContainsKey(epdField))
             {
-                epdValue = System.Convert.ToDouble(epdData.CustomData[epdField]);
+                try
+                {
+                    epdValue = System.Convert.ToDouble(epdData.CustomData[epdField]);
+                }
+                catch
+                {
+                    BH.Engine.Reflection.Compute.RecordWarning("The value for {epdField} is not a number, or is not valid.");
+                    return 0;
+                }                    
             }
             else
             {
