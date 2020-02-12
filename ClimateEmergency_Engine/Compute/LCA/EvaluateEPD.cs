@@ -37,15 +37,18 @@ namespace BH.Engine.ClimateEmergency
         /****   Public Methods                          ****/
         /***************************************************/
 
-        [Description("Calculates the acidification potential of a BHoM Object based on explicitly defined volume and Environmental Product Declaration dataset.")]
+        [Description("Calculates select metrics from Environmental Product Declarations of a BHoM Object based on defined volume and Environmental Product Declaration dataset information.")]
         [Input("obj", "The BHoM Object to evaluate. The object must have a material density and sufficient location data to define a volume, or a custom data field `Volume`.")]
-        [Input("epdData", "BHoM Data object containing an EPD")]
+        [Input("epdData", "BHoM Data object containing Environmental Product Declaration metrics.")]
         [Input("epdField", "Text string corresponding to one of the available fields in the epdData set.")]
         [Output("quantity", "The effect of the EPD field specified for this object")]
         public static double EvaluateEPD(BHoMObject obj = null, CustomObject epdData = null, EPDField epdField = EPDField.GlobalWarmingPotential)
         {
-            double mass = IMass(obj);
+            return IMass(obj) * CompileEPD(epdData, epdField);
+        }
 
+        public static double CompileEPD(CustomObject epdData, EPDField epdField)
+        {
             double epdValue = 0;
 
             if (epdData.CustomData.ContainsKey(System.Convert.ToString(epdField)))
@@ -58,18 +61,28 @@ namespace BH.Engine.ClimateEmergency
                 {
                     BH.Engine.Reflection.Compute.RecordWarning("The value for {epdField} is not a number, or is not valid.");
                     return 0;
-                }                    
+                }
             }
             else
             {
                 BH.Engine.Reflection.Compute.RecordError($"The EPDDataset must have a value for {epdField}");
                 return 0;
             }
-
-            return mass * epdValue;
+            return epdValue;
         }
 
         /***************************************************/
 
+        [Description("Calculates the acidification potential of a BHoM Object based on explicitly defined volume and Environmental Product Declaration dataset.")]
+        [Input("volume", "Volume as a double. This method does not extract the Volume of an object and should be provided manually. The property may be extracted from a BHoM EPD Dataset.")]
+        [Input("density", "Density as a double. This method does not extract the Density of an object and should be provided manually. The property may be extracted from a BHoM EPD Dataset.")]
+        [Input("epdData", "BHoM Data object containing values for typical metrics within Environmental Product Declarations.")]
+        [Input("epdField", "BHoM EPDField Enum to select Environmental Product Declaration metric for evaluation.")]
+        [Output("quantity", "The effect of the EPD field specified for this object")]
+
+        public static double EvaluateEPD(double volume = 0, double density = 0, CustomObject epdData = null, EPDField epdField = EPDField.GlobalWarmingPotential)
+        {
+            return (volume * density) * CompileEPD(epdData, epdField);
+        }
     }
 }
