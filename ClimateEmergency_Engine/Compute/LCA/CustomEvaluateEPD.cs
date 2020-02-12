@@ -38,14 +38,13 @@ namespace BH.Engine.ClimateEmergency
         /***************************************************/
 
         [Description("Calculates the acidification potential of a BHoM Object based on explicitly defined volume and Environmental Product Declaration dataset.")]
-        [Input("obj", "The BHoM Object to evaluate. The object must have a material density and sufficient location data to define a volume, or a custom data field `Volume`.")]
+        [Input("volume", "The Volume property of a BHoM object to evaluate. If the BHoM object does not contain a ")]
+        [Input("density", "The BHoM Object to evaluate. The object must have a material density and sufficient location data to define a volume, or a custom data field `Volume`.")]
         [Input("epdData", "BHoM Data object containing an EPD")]
         [Input("epdField", "Text string corresponding to one of the available fields in the epdData set.")]
         [Output("quantity", "The effect of the EPD field specified for this object")]
-        public static double EvaluateEPD(BHoMObject obj = null, CustomObject epdData = null, EPDField epdField = EPDField.GlobalWarmingPotential)
+        public static double CustomEvaluateEPD(double volume = 0, double density = 0, CustomObject epdData = null, EPDField epdField = EPDField.GlobalWarmingPotential)
         {
-            double mass = IMass(obj);
-
             double epdValue = 0;
 
             if (epdData.CustomData.ContainsKey(System.Convert.ToString(epdField)))
@@ -66,7 +65,7 @@ namespace BH.Engine.ClimateEmergency
                 return 0;
             }
 
-            return mass * epdValue;
+            return volume * density * epdValue;
         }
 
         /***************************************************/

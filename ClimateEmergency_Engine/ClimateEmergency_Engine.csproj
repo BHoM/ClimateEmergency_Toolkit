@@ -81,6 +81,7 @@
     <Compile Include="Compute\CalculateAssemblies\ConcreteVolume.cs" />
     <Compile Include="Compute\CalculateAssemblies\GlazingVolume.cs" />
     <Compile Include="Compute\CalculateAssemblies\ReinforcementVolume.cs" />
+    <Compile Include="Compute\LCA\CustomEvaluateEPD.cs" />
     <Compile Include="Compute\LCA\EvaluateEPD.cs" />
     <Compile Include="Compute\LCA\DepletionOfAbioticResources.cs" />
     <Compile Include="Compute\LCA\DepletionOfAbioticResourcesFossilFuels.cs" />

@@ -44,6 +44,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Enums\EPDField.cs" />
     <Compile Include="Water\BuildingOccupancyByGender.cs" />
     <Compile Include="Water\BuildingPlumbingFixtureSelection.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
