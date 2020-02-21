@@ -83,26 +83,31 @@ namespace BH.Engine.ClimateEmergency
         {
             double calcDensity = double.NaN;
 
-            if (epdData.CustomData.ContainsKey("Density"))
+            if (density != 0)
             {
-                try
-                {
-                    calcDensity = System.Convert.ToDouble(epdData.CustomData["Density"]);
-                }
-                catch(Exception e)
-                {
-                    BH.Engine.Reflection.Compute.RecordError("An error occurred in converting the custom data key Density to a valid number (double) - error was: " + e.ToString());
-                }
-            }
-
-            if ((calcDensity == 0 || double.IsNaN(calcDensity)) && (density == 0 || double.IsNaN(density)))
-            {
-                BH.Engine.Reflection.Compute.RecordError($"Results cannot be calculated. Please check your input values for Density, Volume, and {epdField}");
-                return double.NaN;
+                calcDensity = density;
             }
             else
-                calcDensity = density;
+            {
+                BH.Engine.Reflection.Compute.RecordNote("Density value is either zero or is being derived from the epdData. Please verify the correct value within the dataset before continuing by using the explode component.");
 
+                if (epdData.CustomData.ContainsKey("Density"))
+                {
+                    try
+                    {
+                        calcDensity = System.Convert.ToDouble(epdData.CustomData["Density"]);
+                    }
+                    catch (Exception e)
+                    {
+                        BH.Engine.Reflection.Compute.RecordError("An error occurred in converting the custom data key Density to a valid number (double) - error was: " + e.ToString());
+                    }
+                }
+                if ((calcDensity == 0 || double.IsNaN(calcDensity)) && (density == 0 || double.IsNaN(density)))
+                {
+                    BH.Engine.Reflection.Compute.RecordError($"Results cannot be calculated. Please check your input values for Density, Volume, and {epdField}");
+                    return double.NaN;
+                }
+            }
             return (volume * calcDensity) * CompileEPD(epdData, epdField);
         }
     }
