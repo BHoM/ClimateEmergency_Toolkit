@@ -59,7 +59,7 @@ namespace BH.Engine.ClimateEmergency
                 }
                 catch
                 {
-                    BH.Engine.Reflection.Compute.RecordWarning("The value for {epdField} is not a number, or is not valid.");
+                    BH.Engine.Reflection.Compute.RecordError("The value for {epdField} cannot be measured. Please check your data source to ensure the metric is being evaluated before computing.");
                     return 0;
                 }
             }
@@ -79,10 +79,31 @@ namespace BH.Engine.ClimateEmergency
         [Input("epdData", "BHoM Data object containing values for typical metrics within Environmental Product Declarations.")]
         [Input("epdField", "BHoM EPDField Enum to select Environmental Product Declaration metric for evaluation.")]
         [Output("quantity", "The effect of the EPD field specified for this object")]
-
         public static double EvaluateEPD(double volume = 0, double density = 0, CustomObject epdData = null, EPDField epdField = EPDField.GlobalWarmingPotential)
         {
-            return (volume * density) * CompileEPD(epdData, epdField);
+            double calcDensity = double.NaN;
+
+            if (epdData.CustomData.ContainsKey("Density"))
+            {
+                try
+                {
+                    calcDensity = System.Convert.ToDouble(epdData.CustomData["Density"]);
+                }
+                catch(Exception e)
+                {
+                    BH.Engine.Reflection.Compute.RecordError("An error occurred in converting the custom data key Density to a valid number (double) - error was: " + e.ToString());
+                }
+            }
+
+            if ((calcDensity == 0 || double.IsNaN(calcDensity)) && (density == 0 || double.IsNaN(density)))
+            {
+                BH.Engine.Reflection.Compute.RecordError($"Results cannot be calculated. Please check your input values for Density, Volume, and {epdField}");
+                return double.NaN;
+            }
+            else
+                calcDensity = density;
+
+            return (volume * calcDensity) * CompileEPD(epdData, epdField);
         }
     }
 }
