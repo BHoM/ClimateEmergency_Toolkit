@@ -30,6 +30,15 @@ namespace BH.oM.ClimateEmergency
         DepletionOfAbioticResourcesFossilFuels,
         EutrophicationPotential,
         OzoneDepletionPotential,
-        PhotochemicalOzoneCreationPotential
+        PhotochemicalOzoneCreationPotential,
+        GlobalWarmingPotentialEOL,
+        AcidificationPotentialEOL,
+        DepletionOfAbioticResourcesEOL,
+        DepletionOfAbioticResourcesFossilFuelsEOL,
+        EutrophicationPotentialEOL,
+        OzoneDepletionPotentialEOL,
+        PhotochemicalOzoneCreationPotentialEOL,
     }
 }
+
+//rename enum categories to match epd data object, catch with switch case within the LCA method.

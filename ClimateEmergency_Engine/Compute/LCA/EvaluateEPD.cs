@@ -28,6 +28,7 @@ using BH.oM.Base;
 using BH.oM.Reflection.Attributes;
 using BH.oM.Structure.MaterialFragments;
 using BH.oM.ClimateEmergency;
+using BH.oM.LifeCycleAnalysis;
 
 namespace BH.Engine.ClimateEmergency
 {
@@ -42,26 +43,18 @@ namespace BH.Engine.ClimateEmergency
         [Input("epdData", "BHoM Data object containing Environmental Product Declaration metrics.")]
         [Input("epdField", "Text string corresponding to one of the available fields in the epdData set.")]
         [Output("quantity", "The effect of the EPD field specified for this object")]
-        public static double EvaluateEPD(BHoMObject obj = null, CustomObject epdData = null, EPDField epdField = EPDField.GlobalWarmingPotential)
+        public static double EvaluateEPD(BHoMObject obj = null, EPDData epdData = null, EPDField epdField = EPDField.GlobalWarmingPotential)
         {
-            return IMass(obj) * CompileEPD(epdData, epdField);
+            return IMass(obj) * CompileEPD(epdData, epdField); 
         }
-
-        public static double CompileEPD(CustomObject epdData, EPDField epdField)
+        public static double CompileEPD(EPDData epdData, EPDField epdField)
         {
             double epdValue = 0;
 
-            if (epdData.CustomData.ContainsKey(System.Convert.ToString(epdField)))
+            //Global Warming Potential//
+            if (epdData.GlobalWarmingPotential != null)
             {
-                try
-                {
-                    epdValue = System.Convert.ToDouble(epdData.CustomData[System.Convert.ToString(epdField)]);
-                }
-                catch
-                {
-                    BH.Engine.Reflection.Compute.RecordError("The value for {epdField} cannot be measured. Please check your data source to ensure the metric is being evaluated before computing.");
-                    return 0;
-                }
+                return epdValue;
             }
             else
             {
@@ -69,17 +62,36 @@ namespace BH.Engine.ClimateEmergency
                 return 0;
             }
             return epdValue;
+
+            //if (epdData.CustomData.ContainsKey(System.Convert.ToString(epdField))) //epdData.[epdfield]()
+            //{
+                //try
+                //{
+                    //epdValue = System.Convert.ToDouble(epdData.CustomData[System.Convert.ToString(epdField)]); //check if GWP/kg exists, wrap whole method in if gwp/kg null check, y use, n get value of gwp per declared unit (lca toolkit om then let erik know to change cqd) - get value of declared unit [method call - ex..translateDeclaredUnit [INPUT]:str "1 T, 1 Y3] - translate to KG - if not translate to volume and ask for density (warning, need to calc mass)
+                //}
+                //catch
+               //{
+                    //BH.Engine.Reflection.Compute.RecordError($"The value for {epdField} cannot be measured. Please check your data source to ensure the metric is being evaluated before computing.");
+                    //return 0;
+                //}
+            //}
+            //else
+            //{
+                //BH.Engine.Reflection.Compute.RecordError($"The EPDDataset must have a value for {epdField}");
+                //return 0;
+            //}
+            return epdValue;
         }
 
         /***************************************************/
 
         [Description("Calculates the acidification potential of a BHoM Object based on explicitly defined volume and Environmental Product Declaration dataset.")]
-        [Input("volume", "Volume as a double. This method does not extract the Volume of an object and should be provided manually. The property may be extracted from a BHoM EPD Dataset.")]
-        [Input("density", "Density as a double. This method does not extract the Density of an object and should be provided manually. The property may be extracted from a BHoM EPD Dataset.")]
-        [Input("epdData", "BHoM Data object containing values for typical metrics within Environmental Product Declarations.")]
+        [Input("volume", "Volume in m^2 as a double. This method does not extract the Volume of an object and should be provided manually. The property may be extracted from an EPDData Object.")]
+        [Input("density", "Density in kg/m^3 as a double. This method does not extract the Density of an object and should be provided manually. The property may be extracted from an EPDData Object.")]
+        [Input("epdData", "BHoM EPDData object containing values for typical metrics within Environmental Product Declarations.")]
         [Input("epdField", "BHoM EPDField Enum to select Environmental Product Declaration metric for evaluation.")]
-        [Output("quantity", "The effect of the EPD field specified for this object")]
-        public static double EvaluateEPD(double volume = 0, double density = 0, CustomObject epdData = null, EPDField epdField = EPDField.GlobalWarmingPotential)
+        [Output("quantity", "The quantity of the specified EPD metric within a given geometry.")]
+        public static double EvaluateEPD(double volume = 0, double density = 0, EPDData epdData = null, EPDField epdField = EPDField.GlobalWarmingPotential)
         {
             double calcDensity = double.NaN;
 
@@ -91,11 +103,11 @@ namespace BH.Engine.ClimateEmergency
             {
                 BH.Engine.Reflection.Compute.RecordNote("Density value is either zero or is being derived from the epdData. Please verify the correct value within the dataset before continuing by using the explode component.");
 
-                if (epdData.CustomData.ContainsKey("Density"))
+                if (System.Convert.ToDouble(epdData.Density) != 0)
                 {
                     try
                     {
-                        calcDensity = System.Convert.ToDouble(epdData.CustomData["Density"]);
+                        calcDensity = System.Convert.ToDouble(epdData.Density);
                     }
                     catch (Exception e)
                     {
