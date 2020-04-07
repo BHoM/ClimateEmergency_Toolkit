@@ -1,4 +1,4 @@
-﻿/*
+/*
  * This file is part of the Buildings and Habitats object Model (BHoM)
  * Copyright (c) 2015 - 2020, the respective contributors. All rights reserved.
  *
@@ -30,9 +30,9 @@ namespace BH.oM.ClimateEmergency.Water
 {
     public class BuildingOccupancyByGender
     {
-        public int BuildingOccupancy { get; set; } = 0;
-        public double FemalePercentage { get; set; } = 0.5;
-        public double MalePercentage { get; set; } = 0.5;
-        public double GenderNeutralPercentage { get; set; } = 0.0;
+        public virtual int BuildingOccupancy { get; set; } = 0;
+        public virtual double FemalePercentage { get; set; } = 0.5;
+        public virtual double MalePercentage { get; set; } = 0.5;
+        public virtual double GenderNeutralPercentage { get; set; } = 0.0;
     }
 }
