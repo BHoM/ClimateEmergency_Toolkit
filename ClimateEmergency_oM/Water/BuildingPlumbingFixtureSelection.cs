@@ -1,4 +1,4 @@
-﻿/*
+/*
  * This file is part of the Buildings and Habitats object Model (BHoM)
  * Copyright (c) 2015 - 2020, the respective contributors. All rights reserved.
  *
@@ -30,10 +30,10 @@ namespace BH.oM.ClimateEmergency.Water
 {
     public class BuildingPlumbingFixtureSelection
     {
-        public double ToiletVolumePerUse { get; set; } = 0.0;
-        public double UrinalVolumePerUse { get; set; } = 0.0;
-        public double LavatoryVolumePerUse { get; set; } = 0.0;
-        public double ShowerVolumePerUse { get; set; } = 0.0;
-        public double KitchenFaucetPerUse { get; set; } = 0.0;
+        public virtual double ToiletVolumePerUse { get; set; } = 0.0;
+        public virtual double UrinalVolumePerUse { get; set; } = 0.0;
+        public virtual double LavatoryVolumePerUse { get; set; } = 0.0;
+        public virtual double ShowerVolumePerUse { get; set; } = 0.0;
+        public virtual double KitchenFaucetPerUse { get; set; } = 0.0;
     }
 }
