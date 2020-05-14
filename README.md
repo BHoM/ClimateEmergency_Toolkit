@@ -1,8 +1,8 @@
-[![License: LGPL v3](https://img.shields.io/badge/License-LGPL%20v3-blue.svg)](https://www.gnu.org/licenses/lgpl-3.0) [![Build status](https://ci.appveyor.com/api/projects/status/11a3ucotxcl9746k/branch/master?svg=true)](https://ci.appveyor.com/project/BHoMBot/ClimateEmergency-Toolkit/branch/master) [![Build Status](https://dev.azure.com/BHoMBot/BHoM/_apis/build/status/ClimateEmergency_Toolkit/ClimateEmergency_Toolkit.CheckCore?branchName=master)](https://dev.azure.com/BHoMBot/BHoM/_build?definitionId=198&_a=summary)
+[![License: LGPL v3](https://img.shields.io/badge/License-LGPL%20v3-blue.svg)](https://www.gnu.org/licenses/lgpl-3.0) [![Build status](https://ci.appveyor.com/api/projects/status/11a3ucotxcl9746k/branch/master?svg=true)](https://ci.appveyor.com/project/BHoMBot/ClimateEmergency-Toolkit/branch/master) [![Build Status](https://dev.azure.com/BHoMBot/BHoM/_apis/build/status/ClimateEmergency_Toolkit/ClimateEmergency_Toolkit.CheckCore?branchName=master)](https://dev.azure.com/BHoMBot/BHoM/_build/latest?definitionId=52&branchName=master)
 
 # ClimateEmergency_Toolkit
 
-The ClimateEmergency_Toolkit was created in response to the Global Climate strike in September 2019. Initially charged by our computational collective team, it has quickly gained global appreciation and collaboration as a collective space for sharing ideas and prototyping climate emergency-related computational solutions. Reach out and get involved today!
+The ClimateEmergency_Toolkit was created in response to the Global Climate strike in September 2019. It has quickly gained global appreciation and collaboration as a collective space for sharing ideas and prototyping climate emergency-related computational solutions. Reach out and get involved today!
 
 ### Documentation
 For more information about functionality see [the ClimateEmergency_Toolkit wiki](https://github.com/BHoM/ClimateEmergency_Toolkit/wiki)
