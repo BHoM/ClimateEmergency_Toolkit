@@ -48,10 +48,7 @@
     <Compile Include="Water\BuildingPlumbingFixtureSelection.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="DataSets\LifeCycleAnalysis\EmbodiedCarbon\" />
-    <Folder Include="DataSets\Water\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>C:\Windows\System32\xcopy "$(SolutionDir)DataSets\*.*" "C:\Users\$(Username)\AppData\Roaming\BHoM\DataSets" /Y /I /E</PostBuildEvent>
