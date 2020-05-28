@@ -64,25 +64,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Compute\CalculateAssemblies\ConcreteVolume.cs" />
-    <Compile Include="Compute\CalculateAssemblies\GlazingVolume.cs" />
-    <Compile Include="Compute\CalculateAssemblies\ReinforcementVolume.cs" />
-    <Compile Include="Compute\LCA\DepletionOfAbioticResources.cs" />
-    <Compile Include="Compute\LCA\DepletionOfAbioticResourcesFossilFuels.cs" />
-    <Compile Include="Compute\LCA\EmbodiedEnergyVariance.cs" />
-    <Compile Include="Compute\MaterialEndOfLifeTreatment.cs" />
-    <Compile Include="Compute\ValueInputs\AcidificationPotential.cs" />
-    <Compile Include="Compute\ValueInputs\DepletionOfAbioticResources.cs" />
-    <Compile Include="Compute\ValueInputs\DepletionOfAbioticResourcesFossilFuels.cs" />
-    <Compile Include="Compute\ValueInputs\EutrophicationPotential.cs" />
-    <Compile Include="Compute\ValueInputs\GlobalWarmingPotential.cs" />
-    <Compile Include="Compute\ValueInputs\OzoneDepletionPotential.cs" />
-    <Compile Include="Compute\ValueInputs\PhotochemicalOzoneCreationPotential.cs" />
-    <Compile Include="Compute\LCA\EutrophicationPotential.cs" />
-    <Compile Include="Compute\LCA\AcidificationPotential.cs" />
-    <Compile Include="Compute\LCA\PhotochemicalOzoneCreationPotential.cs" />
-    <Compile Include="Compute\LCA\OzoneDepletionPotential.cs" />
-    <Compile Include="Compute\LCA\GlobalWarmingPotential.cs" />
     <Compile Include="Compute\Water\PlumbingFixtureWaterDemandPerDay.cs" />
     <Compile Include="Create\Water\BuildingOccupancyByGender.cs" />
     <Compile Include="Create\Water\BuildingPlumbingFixtureSelection.cs" />
