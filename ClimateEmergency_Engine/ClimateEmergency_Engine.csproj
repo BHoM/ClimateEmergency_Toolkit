@@ -64,9 +64,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Compute\Water\PlumbingFixtureWaterDemandPerDay.cs" />
-    <Compile Include="Create\Water\BuildingOccupancyByGender.cs" />
-    <Compile Include="Create\Water\BuildingPlumbingFixtureSelection.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
