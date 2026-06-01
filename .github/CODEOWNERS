@@ -1,4 +1,4 @@
-# ClimateEmergency_Toolkit REPO CODEOWNERS
+# This file is managed by github-governance. Do not edit manually.
+# Source: orgs/BHoM/codeowners.yml
 
-# default global
-* @FraserGreenroyd @kayleighhoude
+* @BHoM/climateemergency_toolkit @BHoM/devops
